@@ -1,0 +1,1296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClearingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ClearingModelStoreContainer">
+          <EntitySet Name="Ascii" EntityType="ClearingModel.Store.Ascii" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ascii_det" EntityType="ClearingModel.Store.Ascii_det" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Bancos" EntityType="ClearingModel.Store.Bancos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Camara" EntityType="ClearingModel.Store.Camara" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CHERFII" EntityType="ClearingModel.Store.CHERFII" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CHITCI" EntityType="ClearingModel.Store.CHITCI" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cierres" EntityType="ClearingModel.Store.Cierres" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Clasificacion" EntityType="ClearingModel.Store.Clasificacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClasificacionDet" EntityType="ClearingModel.Store.ClasificacionDet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConfigMICR" EntityType="ClearingModel.Store.ConfigMICR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CREC" EntityType="ClearingModel.Store.CREC" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CRECDet" EntityType="ClearingModel.Store.CRECDet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CuentasEspeciales" EntityType="ClearingModel.Store.CuentasEspeciales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Feriados" EntityType="ClearingModel.Store.Feriados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Formalistica" EntityType="ClearingModel.Store.Formalistica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Formatos" EntityType="ClearingModel.Store.Formatos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lecturas" EntityType="ClearingModel.Store.Lecturas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LecturasRechazos" EntityType="ClearingModel.Store.LecturasRechazos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Monedas" EntityType="ClearingModel.Store.Monedas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MotivosRechazo" EntityType="ClearingModel.Store.MotivosRechazo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PruebaNewId" EntityType="ClearingModel.Store.PruebaNewId" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sucursales" EntityType="ClearingModel.Store.Sucursales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_config" EntityType="ClearingModel.Store.sys_config" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tipo_Documentos" EntityType="ClearingModel.Store.Tipo_Documentos" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Bancos_Sucursales_FK1" Association="ClearingModel.Store.Bancos_Sucursales_FK1">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="Sucursales" EntitySet="Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ascci_det_ascci" Association="ClearingModel.Store.FK_ascci_det_ascci">
+            <End Role="Ascii" EntitySet="Ascii" />
+            <End Role="Ascii_det" EntitySet="Ascii_det" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClasificacionDet_Clasificacion" Association="ClearingModel.Store.FK_ClasificacionDet_Clasificacion">
+            <End Role="Clasificacion" EntitySet="Clasificacion" />
+            <End Role="ClasificacionDet" EntitySet="ClasificacionDet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRECDet_CREC" Association="ClearingModel.Store.FK_CRECDet_CREC">
+            <End Role="CREC" EntitySet="CREC" />
+            <End Role="CRECDet" EntitySet="CRECDet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LecturasRechazos_Lecturas" Association="ClearingModel.Store.FK_LecturasRechazos_Lecturas">
+            <End Role="Lecturas" EntitySet="Lecturas" />
+            <End Role="LecturasRechazos" EntitySet="LecturasRechazos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LecturasRechazos_MotivosRechazo" Association="ClearingModel.Store.FK_LecturasRechazos_MotivosRechazo">
+            <End Role="MotivosRechazo" EntitySet="MotivosRechazo" />
+            <End Role="LecturasRechazos" EntitySet="LecturasRechazos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ascii">
+          <Key>
+            <PropertyRef Name="idcabecera" />
+          </Key>
+          <Property Name="idcabecera" Type="int" Nullable="false" />
+          <Property Name="cod_banco" Type="char" MaxLength="2" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="registro_inicio" Type="varchar" MaxLength="150" />
+          <Property Name="registro_fin" Type="varchar" MaxLength="150" />
+          <Property Name="sql" Type="nvarchar" />
+          <Property Name="IdFormato" Type="int" />
+          <Property Name="EstructuraDestino" Type="varchar" MaxLength="200" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" />
+          <Property Name="ArchivoDestino" Type="varchar" MaxLength="50" />
+          <Property Name="ArchivoDestino1" Type="varchar" MaxLength="200" />
+          <Property Name="IdProceso" Type="int" />
+          <Property Name="IdMoneda" Type="char" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Ascii_det">
+          <Key>
+            <PropertyRef Name="iddetalle" />
+          </Key>
+          <Property Name="iddetalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idcabecera" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="valor" Type="varchar" MaxLength="200" />
+          <Property Name="orden" Type="int" />
+          <Property Name="longitud" Type="int" />
+          <Property Name="tipo" Type="char" MaxLength="1" />
+          <Property Name="formato" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Bancos">
+          <Key>
+            <PropertyRef Name="cod_banco" />
+          </Key>
+          <Property Name="cod_banco" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="nombre_banco" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="CuentaPais" Type="numeric" Precision="12" />
+          <Property Name="NombreCorto" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Camara">
+          <Key>
+            <PropertyRef Name="cod_camara" />
+          </Key>
+          <Property Name="cod_camara" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CHERFII">
+          <Key>
+            <PropertyRef Name="IdCherfii" />
+          </Key>
+          <Property Name="IdCherfii" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CtaLibradora" Type="char" MaxLength="9" />
+          <Property Name="NroCheque" Type="numeric" Precision="7" />
+          <Property Name="Comprobante" Type="numeric" Precision="7" />
+          <Property Name="AgenciaCR" Type="char" MaxLength="2" />
+          <Property Name="Usuario" Type="char" MaxLength="10" />
+          <Property Name="Importe" Type="money" />
+          <Property Name="FechaProc" Type="datetime" />
+          <Property Name="HoraProc" Type="datetime" />
+          <Property Name="CtaDeposito" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CHITCI">
+          <Key>
+            <PropertyRef Name="IdChitci" />
+          </Key>
+          <Property Name="IdChitci" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Usuario" Type="char" MaxLength="10" />
+          <Property Name="NroMovUsuario" Type="numeric" Precision="4" />
+          <Property Name="FechaMov" Type="datetime" />
+          <Property Name="CtaDeposito" Type="char" MaxLength="9" />
+          <Property Name="Moneda" Type="char" MaxLength="2" />
+          <Property Name="Agencia" Type="char" MaxLength="2" />
+          <Property Name="TipoUsuario" Type="char" MaxLength="1" />
+          <Property Name="Comprobante" Type="numeric" Precision="7" />
+          <Property Name="Importe" Type="money" />
+          <Property Name="CantCheques" Type="numeric" Precision="4" />
+          <Property Name="HoraMov" Type="datetime" />
+          <Property Name="EstadoProceso" Type="char" MaxLength="1" />
+          <Property Name="IdBanco" Type="char" MaxLength="10" />
+          <Property Name="IdMoneda" Type="char" MaxLength="3" />
+          <Property Name="Existe" Type="bit" />
+          <Property Name="IdLectura" Type="int" />
+        </EntityType>
+        <EntityType Name="Cierres">
+          <Key>
+            <PropertyRef Name="IdCierre" />
+          </Key>
+          <Property Name="IdCierre" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdBanco" Type="char" MaxLength="2" />
+          <Property Name="IdProceso" Type="int" />
+          <Property Name="IdMoneda" Type="char" MaxLength="3" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="HoraInicio" Type="datetime" />
+          <Property Name="HoraCierre" Type="datetime" />
+          <Property Name="Cerrado" Type="bit" />
+          <Property Name="UltimaEdicion" Type="datetime" />
+          <Property Name="Paquete" Type="int" />
+        </EntityType>
+        <EntityType Name="Clasificacion">
+          <Key>
+            <PropertyRef Name="IdClasificacion" />
+          </Key>
+          <Property Name="IdClasificacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Idbanco" Type="char" MaxLength="2" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Prioridad" Type="int" />
+        </EntityType>
+        <EntityType Name="ClasificacionDet">
+          <Key>
+            <PropertyRef Name="IdCD" />
+          </Key>
+          <Property Name="IdCD" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdClasificacion" Type="int" />
+          <Property Name="Propiedad" Type="varchar" MaxLength="50" />
+          <Property Name="Condicion" Type="varchar" MaxLength="200" />
+          <Property Name="Valor" Type="varchar" MaxLength="50" />
+          <Property Name="Continuacion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ConfigMICR">
+          <Key>
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="IdProceso" />
+          </Key>
+          <Property Name="IdBanco" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="IdProceso" Type="int" Nullable="false" />
+          <Property Name="BancoEmision" Type="char" MaxLength="10" />
+          <Property Name="TipoDoc" Type="char" MaxLength="10" />
+          <Property Name="Cuenta" Type="char" MaxLength="10" />
+          <Property Name="NroDoc" Type="char" MaxLength="10" />
+          <Property Name="BancoReceptor" Type="char" MaxLength="10" />
+          <Property Name="Camara" Type="char" MaxLength="10" />
+          <Property Name="Cajero" Type="char" MaxLength="10" />
+          <Property Name="Sucursal" Type="char" MaxLength="10" />
+          <Property Name="Importe" Type="char" MaxLength="10" />
+          <Property Name="Longitud" Type="int" />
+          <Property Name="Importe2" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CREC">
+          <Key>
+            <PropertyRef Name="IdCREC" />
+          </Key>
+          <Property Name="IdCREC" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CodBanco" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Importe" Type="money" />
+          <Property Name="Cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="CRECDet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCREC" Type="int" />
+          <Property Name="IdBanco" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Cuenta" Type="decimal" Precision="12" />
+          <Property Name="Numero" Type="decimal" Precision="8" />
+          <Property Name="Importe" Type="money" />
+          <Property Name="Secuencia" Type="int" />
+        </EntityType>
+        <EntityType Name="CuentasEspeciales">
+          <Key>
+            <PropertyRef Name="IdCuenta" />
+            <PropertyRef Name="IdBanco" />
+          </Key>
+          <Property Name="IdCuenta" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="IdBanco" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="NombreCuenta" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Audit_Fecha" Type="datetime" />
+          <Property Name="Audit_Usuario" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Feriados">
+          <Key>
+            <PropertyRef Name="IdFeriado" />
+          </Key>
+          <Property Name="IdFeriado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="smallint" />
+          <Property Name="Mes" Type="smallint" />
+          <Property Name="Año" Type="smallint" />
+          <Property Name="MultiAnual" Type="bit" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Audit_Fecha" Type="datetime" />
+          <Property Name="Audit_Usuario" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Formalistica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdBanco" Type="char" MaxLength="3" />
+          <Property Name="IdProceso" Type="int" />
+          <Property Name="IdMoneda" Type="char" MaxLength="3" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Lotes" Type="int" />
+          <Property Name="Cheques" Type="int" />
+          <Property Name="Importe" Type="money" />
+        </EntityType>
+        <EntityType Name="Formatos">
+          <Key>
+            <PropertyRef Name="IdFormato" />
+          </Key>
+          <Property Name="IdFormato" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Lecturas">
+          <Key>
+            <PropertyRef Name="IdLectura" />
+          </Key>
+          <Property Name="IdLectura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_lectura" Type="datetime" />
+          <Property Name="nro_lote" Type="int" />
+          <Property Name="cod_camara" Type="char" MaxLength="2" />
+          <Property Name="cod_banco" Type="char" MaxLength="2" />
+          <Property Name="cod_sucursal" Type="int" />
+          <Property Name="cod_tipdoc" Type="char" MaxLength="2" />
+          <Property Name="cuenta_cheque" Type="decimal" Precision="12" />
+          <Property Name="numero_cheque" Type="decimal" Precision="8" />
+          <Property Name="cod_banco_receptor" Type="char" MaxLength="2" />
+          <Property Name="cod_banco_emisor" Type="char" MaxLength="2" />
+          <Property Name="cuenta_deposito" Type="char" MaxLength="12" />
+          <Property Name="monto" Type="money" />
+          <Property Name="imagen_frontal" Type="varchar" MaxLength="30" />
+          <Property Name="imagen_reverso" Type="varchar" MaxLength="30" />
+          <Property Name="cabecera" Type="int" />
+          <Property Name="VERIFICADO" Type="bit" />
+          <Property Name="IB_SER" Type="nvarchar" MaxLength="50" />
+          <Property Name="IB_MONTO" Type="bit" />
+          <Property Name="CORREGIDO" Type="bit" />
+          <Property Name="PAQUETE" Type="int" />
+          <Property Name="ENVIADO" Type="bit" />
+          <Property Name="MANO" Type="bit" />
+          <Property Name="cod_maquina" Type="int" />
+          <Property Name="nro_corrida" Type="int" />
+          <Property Name="nro_bolsillo" Type="int" />
+          <Property Name="cadena_captura" Type="varchar" MaxLength="100" />
+          <Property Name="audit_usuario" Type="int" />
+          <Property Name="audit_fecha" Type="datetime" />
+          <Property Name="cod_proceso" Type="int" />
+          <Property Name="cajero" Type="varchar" MaxLength="20" />
+          <Property Name="operador" Type="numeric" Precision="6" />
+          <Property Name="observaciones" Type="char" MaxLength="1" />
+          <Property Name="nro_boleta" Type="varchar" MaxLength="8" />
+          <Property Name="cod_moneda" Type="char" MaxLength="3" />
+          <Property Name="IdMotivo" Type="char" MaxLength="3" />
+          <Property Name="MontoComision" Type="money" />
+          <Property Name="MontoIVA" Type="money" />
+          <Property Name="CodTransComision" Type="char" MaxLength="3" />
+          <Property Name="CodTransIVA" Type="char" MaxLength="3" />
+          <Property Name="IdClasificacion" Type="int" />
+          <Property Name="Editado" Type="bit" />
+          <Property Name="CantCheques" Type="int" />
+          <Property Name="CD" Type="bit" />
+        </EntityType>
+        <EntityType Name="LecturasRechazos">
+          <Key>
+            <PropertyRef Name="IdLR" />
+          </Key>
+          <Property Name="IdLR" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdLectura" Type="int" Nullable="false" />
+          <Property Name="IdMotivo" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="IdBanco" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Audit_Fecha" Type="datetime" />
+          <Property Name="Audit_Usuario" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Monedas">
+          <Key>
+            <PropertyRef Name="cod_moneda" />
+          </Key>
+          <Property Name="cod_moneda" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="descripcion" Type="varchar" MaxLength="20" />
+          <Property Name="decimales" Type="int" />
+        </EntityType>
+        <EntityType Name="MotivosRechazo">
+          <Key>
+            <PropertyRef Name="IdMotivo" />
+            <PropertyRef Name="IdBanco" />
+          </Key>
+          <Property Name="IdMotivo" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="IdBanco" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="IdMotivoBCP" Type="char" MaxLength="3" />
+          <Property Name="Motivo" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="AplicaComision" Type="bit" />
+          <Property Name="Audit_Fecha" Type="datetime" />
+          <Property Name="Audit_Usuario" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PruebaNewId">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nro" Type="int" />
+          <Property Name="Instancia" Type="int" />
+        </EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="cod_sucursal" />
+            <PropertyRef Name="cod_banco" />
+          </Key>
+          <Property Name="cod_sucursal" Type="int" Nullable="false" />
+          <Property Name="nombre_sucusal" Type="varchar" MaxLength="30" />
+          <Property Name="cod_banco" Type="char" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="sys_config">
+          <Key>
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="constante" />
+          </Key>
+          <Property Name="IdBanco" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="constante" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="valor" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tipo_Documentos">
+          <Key>
+            <PropertyRef Name="cod_tipdoc" />
+          </Key>
+          <Property Name="cod_tipdoc" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Tipo" Type="char" MaxLength="1" />
+        </EntityType>
+        <Association Name="Bancos_Sucursales_FK1">
+          <End Role="Bancos" Type="ClearingModel.Store.Bancos" Multiplicity="1" />
+          <End Role="Sucursales" Type="ClearingModel.Store.Sucursales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="cod_banco" />
+            </Principal>
+            <Dependent Role="Sucursales">
+              <PropertyRef Name="cod_banco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ascci_det_ascci">
+          <End Role="Ascii" Type="ClearingModel.Store.Ascii" Multiplicity="0..1" />
+          <End Role="Ascii_det" Type="ClearingModel.Store.Ascii_det" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ascii">
+              <PropertyRef Name="idcabecera" />
+            </Principal>
+            <Dependent Role="Ascii_det">
+              <PropertyRef Name="idcabecera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClasificacionDet_Clasificacion">
+          <End Role="Clasificacion" Type="ClearingModel.Store.Clasificacion" Multiplicity="0..1" />
+          <End Role="ClasificacionDet" Type="ClearingModel.Store.ClasificacionDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clasificacion">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="ClasificacionDet">
+              <PropertyRef Name="IdClasificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRECDet_CREC">
+          <End Role="CREC" Type="ClearingModel.Store.CREC" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CRECDet" Type="ClearingModel.Store.CRECDet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CREC">
+              <PropertyRef Name="IdCREC" />
+            </Principal>
+            <Dependent Role="CRECDet">
+              <PropertyRef Name="IdCREC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LecturasRechazos_Lecturas">
+          <End Role="Lecturas" Type="ClearingModel.Store.Lecturas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LecturasRechazos" Type="ClearingModel.Store.LecturasRechazos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lecturas">
+              <PropertyRef Name="IdLectura" />
+            </Principal>
+            <Dependent Role="LecturasRechazos">
+              <PropertyRef Name="IdLectura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LecturasRechazos_MotivosRechazo">
+          <End Role="MotivosRechazo" Type="ClearingModel.Store.MotivosRechazo" Multiplicity="1" />
+          <End Role="LecturasRechazos" Type="ClearingModel.Store.LecturasRechazos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivosRechazo">
+              <PropertyRef Name="IdMotivo" />
+              <PropertyRef Name="IdBanco" />
+            </Principal>
+            <Dependent Role="LecturasRechazos">
+              <PropertyRef Name="IdMotivo" />
+              <PropertyRef Name="IdBanco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="App_BuscarCHITCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cuenta" Type="char" Mode="In" />
+          <Parameter Name="Agencia" Type="char" Mode="In" />
+          <Parameter Name="Comprobante" Type="int" Mode="In" />
+          <Parameter Name="Importe" Type="money" Mode="In" />
+          <Parameter Name="Banco" Type="char" Mode="In" />
+          <Parameter Name="Moneda" Type="char" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="App_GetLecturas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Banco" Type="char" Mode="In" />
+          <Parameter Name="Fecha_lectura" Type="datetime" Mode="In" />
+          <Parameter Name="Cod_Proceso" Type="int" Mode="In" />
+          <Parameter Name="Cod_Moneda" Type="char" Mode="In" />
+          <Parameter Name="Cod_Maquina" Type="int" Mode="In" />
+          <Parameter Name="Paquete" Type="int" Mode="In" />
+        </Function>
+        <Function Name="App_VerificaRepetido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numero_cheque" Type="decimal" Mode="In" />
+          <Parameter Name="cod_banco_receptor" Type="char" Mode="In" />
+          <Parameter Name="cuenta_cheque" Type="decimal" Mode="In" />
+          <Parameter Name="IdLectura" Type="int" Mode="In" />
+          <Parameter Name="Cod_Banco" Type="char" Mode="In" />
+          <Parameter Name="Cod_Moneda" Type="char" Mode="In" />
+          <Parameter Name="Fecha_lectura" Type="datetime" Mode="In" />
+          <Parameter Name="Cod_Proceso" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteBancos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_banco" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteSucursales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_sucursal" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NewId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tabla" Type="char" Mode="In" />
+          <Parameter Name="idvalor" Type="int" Mode="InOut" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClearingModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities">
+          <FunctionImport Name="DeleteBancos" ReturnType="Collection(Int32)">
+          <Parameter Name="cod_banco" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteSucursales">
+          <Parameter Name="cod_sucursal" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Lecturas" EntityType="ClearingModel.Lecturas" />
+          <EntitySet Name="Bancos" EntityType="ClearingModel.Bancos" />
+          <EntitySet Name="Camaras" EntityType="ClearingModel.Camara" />
+          <EntitySet Name="Ascii" EntityType="ClearingModel.Ascii" />
+          <EntitySet Name="Ascii_det" EntityType="ClearingModel.Ascii_det" />
+          <AssociationSet Name="FK_Ascii_det_Ascii" Association="ClearingModel.FK_Ascii_det_Ascii">
+            <End Role="Ascii" EntitySet="Ascii" />
+            <End Role="Ascii_det" EntitySet="Ascii_det" /></AssociationSet>
+          <EntitySet Name="Formatos" EntityType="ClearingModel.Formatos" />
+          <EntitySet Name="Monedas" EntityType="ClearingModel.Monedas" />
+          <EntitySet Name="Sucursales" EntityType="ClearingModel.Sucursales" />
+          <AssociationSet Name="Bancos_Sucursales_FK1" Association="ClearingModel.Bancos_Sucursales_FK1">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="Sucursales" EntitySet="Sucursales" /></AssociationSet>
+          <EntitySet Name="ConfigMICR" EntityType="ClearingModel.ConfigMICR" />
+          <EntitySet Name="Tipo_Documentos" EntityType="ClearingModel.Tipo_Documentos" />
+          <EntitySet Name="Cierres" EntityType="ClearingModel.Cierres" />
+          <EntitySet Name="MotivosRechazo" EntityType="ClearingModel.MotivosRechazo" />
+          <EntitySet Name="CuentasEspeciales" EntityType="ClearingModel.CuentasEspeciales" />
+          <EntitySet Name="sys_config" EntityType="ClearingModel.sys_config" />
+          <EntitySet Name="Feriados" EntityType="ClearingModel.Feriados" />
+          <EntitySet Name="Clasificacion" EntityType="ClearingModel.Clasificacion" />
+          <EntitySet Name="ClasificacionDet" EntityType="ClearingModel.ClasificacionDet" />
+          <AssociationSet Name="FK_ClasificacionDet_Clasificacion" Association="ClearingModel.FK_ClasificacionDet_Clasificacion">
+            <End Role="Clasificacion" EntitySet="Clasificacion" />
+            <End Role="ClasificacionDet" EntitySet="ClasificacionDet" /></AssociationSet>
+          <EntitySet Name="CREC" EntityType="ClearingModel.CREC" />
+          <EntitySet Name="CRECDet" EntityType="ClearingModel.CRECDet" />
+          <AssociationSet Name="FK_CRECDet_CREC" Association="ClearingModel.FK_CRECDet_CREC">
+            <End Role="CREC" EntitySet="CREC" />
+            <End Role="CRECDet" EntitySet="CRECDet" /></AssociationSet>
+          <FunctionImport Name="App_VerificaRepetido" EntitySet="Lecturas" ReturnType="Collection(ClearingModel.Lecturas)">
+            <Parameter Name="numero_cheque" Mode="In" Type="Decimal" />
+            <Parameter Name="cod_banco_receptor" Mode="In" Type="String" />
+            <Parameter Name="cuenta_cheque" Mode="In" Type="Decimal" />
+            <Parameter Name="IdLectura" Mode="In" Type="Int32" />
+            <Parameter Name="Cod_Banco" Mode="In" Type="String" />
+            <Parameter Name="Cod_Moneda" Mode="In" Type="String" />
+            <Parameter Name="Fecha_lectura" Mode="In" Type="DateTime" />
+            <Parameter Name="Cod_Proceso" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="CHERFII" EntityType="ClearingModel.CHERFII" />
+          <EntitySet Name="CHITCI" EntityType="ClearingModel.CHITCI" />
+          <FunctionImport Name="NewId" ReturnType="Collection(Int32)">
+            <Parameter Name="tabla" Mode="In" Type="String" />
+            <Parameter Name="idvalor" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="PruebaNewId" EntityType="ClearingModel.PruebaNewId" />
+          <FunctionImport Name="App_GetLecturas" EntitySet="Lecturas" ReturnType="Collection(ClearingModel.Lecturas)">
+            <Parameter Name="Cod_Banco" Mode="In" Type="String" />
+            <Parameter Name="Fecha_lectura" Mode="In" Type="DateTime" />
+            <Parameter Name="Cod_Proceso" Mode="In" Type="Int32" />
+            <Parameter Name="Cod_Moneda" Mode="In" Type="String" />
+            <Parameter Name="Cod_Maquina" Mode="In" Type="Int32" />
+            <Parameter Name="Paquete" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Formalistica" EntityType="ClearingModel.Formalistica" />
+          <FunctionImport Name="App_BuscarCHITCI" EntitySet="CHITCI" ReturnType="Collection(ClearingModel.CHITCI)">
+            <Parameter Name="Cuenta" Mode="In" Type="String" />
+            <Parameter Name="Agencia" Mode="In" Type="String" />
+            <Parameter Name="Comprobante" Mode="In" Type="Int32" />
+            <Parameter Name="Importe" Mode="In" Type="Decimal" />
+            <Parameter Name="Banco" Mode="In" Type="String" />
+            <Parameter Name="Moneda" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="LecturasRechazos" EntityType="ClearingModel.LecturasRechazo" />
+          <AssociationSet Name="FK_LecturasRechazos_Lecturas" Association="ClearingModel.FK_LecturasRechazos_Lecturas">
+            <End Role="Lecturas" EntitySet="Lecturas" />
+            <End Role="LecturasRechazo" EntitySet="LecturasRechazos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LecturasRechazos_MotivosRechazo" Association="ClearingModel.FK_LecturasRechazos_MotivosRechazo">
+            <End Role="MotivosRechazo" EntitySet="MotivosRechazo" />
+            <End Role="LecturasRechazo" EntitySet="LecturasRechazos" />
+          </AssociationSet></EntityContainer>
+        <EntityType Name="Lecturas">
+          <Key>
+            <PropertyRef Name="IdLectura" /></Key>
+          <Property Name="nro_lote" Type="Int32" Nullable="false" />
+          <Property Name="audit_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="cod_banco" Type="String" Nullable="true" />
+          <Property Name="cod_tipdoc" Type="String" Nullable="true" />
+          <Property Name="cuenta_cheque" Type="Decimal" Nullable="true" />
+          <Property Name="numero_cheque" Type="Decimal" Nullable="true" />
+          <Property Name="cod_banco_receptor" Type="String" Nullable="true" />
+          <Property Name="cod_camara" Type="String" Nullable="true" />
+          <Property Name="monto" Type="Decimal" Nullable="true" />
+          <Property Name="imagen_frontal" Type="String" Nullable="true" />
+          <Property Name="imagen_reverso" Type="String" Nullable="true" />
+          <Property Name="cabecera" Type="Int32" Nullable="true" />
+          <Property Name="fecha_lectura" Type="DateTime" Nullable="true" />
+          <Property Name="VERIFICADO" Type="Boolean" Nullable="false" />
+          <Property Name="IB_SER" Type="String" Nullable="true" />
+          <Property Name="IB_MONTO" Type="Boolean" Nullable="false" />
+          <Property Name="CORREGIDO" Type="Boolean" Nullable="false" />
+          <Property Name="audit_usuario" Type="Int32" Nullable="true" />
+          <Property Name="PAQUETE" Type="Int32" Nullable="true" />
+          <Property Name="ENVIADO" Type="Boolean" Nullable="false" />
+          <Property Name="MANO" Type="Boolean" Nullable="false" />
+          <Property Name="cadena_captura" Type="String" Nullable="true" />
+          <Property Name="cuenta_deposito" Type="String" Nullable="true" />
+          <Property Name="cod_maquina" Type="Int32" Nullable="true" />
+          <Property Name="cod_sucursal" Type="Int32" Nullable="true" />
+          <Property Name="cod_banco_emisor" Type="String" Nullable="true" />
+          <Property Name="nro_corrida" Type="Int32" Nullable="true" />
+          <Property Name="nro_bolsillo" Type="Int32" Nullable="true" />
+          <Property Name="IdLectura" Type="Int32" Nullable="false" />
+          <Property Name="cod_proceso" Type="Int32" Nullable="true" />
+          <Property Name="cajero" Type="String" Nullable="true" />
+          <Property Name="operador" Type="Decimal" Nullable="true" />
+          <Property Name="observaciones" Type="String" Nullable="true" />
+          <Property Name="cod_moneda" Type="String" Nullable="true" />
+          <Property Name="IdMotivo" Type="String" Nullable="true" />
+          <Property Name="MontoComision" Type="Decimal" Nullable="true" />
+          <Property Name="MontoIVA" Type="Decimal" Nullable="true" />
+          <Property Name="CodTransComision" Type="String" Nullable="true" />
+          <Property Name="CodTransIVA" Type="String" Nullable="true" />
+          <Property Name="IdClasificacion" Type="Int32" Nullable="true" />
+          <Property Name="nro_boleta" Type="String" Nullable="true" />
+          <Property Name="Editado" Type="Boolean" Nullable="true" />
+          <Property Name="CantCheques" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="LecturasRechazos" Relationship="ClearingModel.FK_LecturasRechazos_Lecturas" FromRole="Lecturas" ToRole="LecturasRechazo" />
+          <Property Type="Boolean" Name="CD" /></EntityType>
+        <EntityType Name="Bancos">
+          <Key>
+            <PropertyRef Name="cod_banco" /></Key>
+          <Property Name="cod_banco" Type="String" Nullable="false" />
+          <Property Name="nombre_banco" Type="String" Nullable="true" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sucursales" Relationship="ClearingModel.Bancos_Sucursales_FK1" FromRole="Bancos" ToRole="Sucursales" />
+          <Property Name="CuentaPais" Type="Decimal" Nullable="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="true" />
+          <Property Name="NombreCorto" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Camara">
+          <Key>
+            <PropertyRef Name="cod_camara" /></Key>
+          <Property Name="cod_camara" Type="String" Nullable="false" />
+          <Property Name="Ciudad" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Ascii">
+          <Key>
+            <PropertyRef Name="idcabecera" /></Key>
+          <Property Name="idcabecera" Type="Int32" Nullable="false" />
+          <Property Name="cod_banco" Type="String" Nullable="true" />
+          <Property Name="descripcion" Type="String" Nullable="true" />
+          <Property Name="registro_inicio" Type="String" Nullable="true" />
+          <Property Name="registro_fin" Type="String" Nullable="true" />
+          <Property Name="sql" Type="String" Nullable="true" />
+          <NavigationProperty Name="Ascii_det" Relationship="ClearingModel.FK_Ascii_det_Ascii" FromRole="Ascii" ToRole="Ascii_det" />
+          <Property Name="IdFormato" Type="Int32" Nullable="true" />
+          <Property Name="EstructuraDestino" Type="String" Nullable="true" />
+          <Property Name="Titulo" Type="String" Nullable="true" />
+          <Property Name="ArchivoDestino" Type="String" Nullable="true" />
+          <Property Name="ArchivoDestino1" Type="String" Nullable="true" />
+          <Property Name="IdProceso" Type="Int32" Nullable="true" />
+          <Property Name="IdMoneda" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Ascii_det">
+          <Key>
+            <PropertyRef Name="iddetalle" /></Key>
+          <Property Name="iddetalle" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="true" />
+          <Property Name="valor" Type="String" Nullable="true" />
+          <Property Name="orden" Type="Int32" Nullable="true" />
+          <Property Name="longitud" Type="Int32" Nullable="true" />
+          <Property Name="tipo" Type="String" Nullable="true" />
+          <NavigationProperty Name="Ascii" Relationship="ClearingModel.FK_Ascii_det_Ascii" FromRole="Ascii_det" ToRole="Ascii" />
+          <Property Name="formato" Type="String" Nullable="true" /></EntityType>
+        <Association Name="FK_Ascii_det_Ascii">
+          <End Type="ClearingModel.Ascii" Role="Ascii" Multiplicity="0..1" />
+          <End Type="ClearingModel.Ascii_det" Role="Ascii_det" Multiplicity="*" /></Association>
+        <EntityType Name="Formatos">
+          <Key>
+            <PropertyRef Name="IdFormato" /></Key>
+          <Property Name="IdFormato" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="true" />
+          <Property Name="Tipo" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Monedas">
+          <Key>
+            <PropertyRef Name="cod_moneda" /></Key>
+          <Property Name="cod_moneda" Type="String" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="true" />
+          <Property Name="decimales" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="cod_sucursal" />
+            <PropertyRef Name="cod_banco" /></Key>
+          <Property Name="cod_sucursal" Type="Int32" Nullable="false" />
+          <Property Name="nombre_sucusal" Type="String" Nullable="true" />
+          <Property Name="cod_banco" Type="String" Nullable="false" />
+          <NavigationProperty Name="Bancos" Relationship="ClearingModel.Bancos_Sucursales_FK1" FromRole="Sucursales" ToRole="Bancos" /></EntityType>
+        <Association Name="Bancos_Sucursales_FK1">
+          <End Type="ClearingModel.Bancos" Role="Bancos" Multiplicity="1" />
+          <End Type="ClearingModel.Sucursales" Role="Sucursales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="cod_banco" /></Principal>
+            <Dependent Role="Sucursales">
+              <PropertyRef Name="cod_banco" /></Dependent></ReferentialConstraint></Association>
+        <EntityType Name="ConfigMICR">
+          <Key>
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="IdProceso" /></Key>
+          <Property Name="IdBanco" Type="String" Nullable="false" />
+          <Property Name="IdProceso" Type="Int32" Nullable="false" />
+          <Property Name="BancoEmision" Type="String" Nullable="true" />
+          <Property Name="TipoDoc" Type="String" Nullable="true" />
+          <Property Name="Cuenta" Type="String" Nullable="true" />
+          <Property Name="NroDoc" Type="String" Nullable="true" />
+          <Property Name="BancoReceptor" Type="String" Nullable="true" />
+          <Property Name="Camara" Type="String" Nullable="true" />
+          <Property Name="Cajero" Type="String" Nullable="true" />
+          <Property Name="Sucursal" Type="String" Nullable="true" />
+          <Property Name="Importe" Type="String" Nullable="true" />
+          <Property Name="Longitud" Type="Int32" Nullable="true" />
+          <Property Name="Importe2" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Tipo_Documentos">
+          <Key>
+            <PropertyRef Name="cod_tipdoc" /></Key>
+          <Property Name="cod_tipdoc" Type="String" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="true" />
+          <Property Name="Tipo" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Cierres">
+          <Key>
+            <PropertyRef Name="IdCierre" /></Key>
+          <Property Name="IdCierre" Type="Int32" Nullable="false" />
+          <Property Name="IdBanco" Type="String" Nullable="true" />
+          <Property Name="IdProceso" Type="Int32" Nullable="true" />
+          <Property Name="IdMoneda" Type="String" Nullable="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="true" />
+          <Property Name="HoraInicio" Type="DateTime" Nullable="true" />
+          <Property Name="HoraCierre" Type="DateTime" Nullable="true" />
+          <Property Name="Cerrado" Type="Boolean" Nullable="true" />
+          <Property Name="UltimaEdicion" Type="DateTime" Nullable="true" />
+          <Property Name="Paquete" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="MotivosRechazo">
+          <Key>
+            <PropertyRef Name="IdMotivo" />
+            <PropertyRef Name="IdBanco" /></Key>
+          <Property Name="IdMotivo" Type="String" Nullable="false" />
+          <Property Name="IdBanco" Type="String" Nullable="false" />
+          <Property Name="IdMotivoBCP" Type="String" Nullable="true" />
+          <Property Name="Motivo" Type="String" Nullable="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="true" />
+          <Property Name="Audit_Fecha" Type="DateTime" Nullable="true" />
+          <Property Name="Audit_Usuario" Type="String" Nullable="true" />
+          <Property Name="AplicaComision" Type="Boolean" Nullable="true" />
+          <NavigationProperty Name="LecturasRechazos" Relationship="ClearingModel.FK_LecturasRechazos_MotivosRechazo" FromRole="MotivosRechazo" ToRole="LecturasRechazo" /></EntityType>
+        <EntityType Name="CuentasEspeciales">
+          <Key>
+            <PropertyRef Name="IdCuenta" />
+            <PropertyRef Name="IdBanco" /></Key>
+          <Property Name="IdCuenta" Type="String" Nullable="false" />
+          <Property Name="IdBanco" Type="String" Nullable="false" />
+          <Property Name="NombreCuenta" Type="String" Nullable="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="true" />
+          <Property Name="Audit_Fecha" Type="DateTime" Nullable="true" />
+          <Property Name="Audit_Usuario" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="sys_config">
+          <Key>
+            <PropertyRef Name="IdBanco" />
+            <PropertyRef Name="constante" /></Key>
+          <Property Name="IdBanco" Type="String" Nullable="false" />
+          <Property Name="constante" Type="String" Nullable="false" />
+          <Property Name="valor" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Feriados">
+          <Key>
+            <PropertyRef Name="IdFeriado" /></Key>
+          <Property Name="IdFeriado" Type="Int32" Nullable="false" />
+          <Property Name="Dia" Type="Int16" Nullable="true" />
+          <Property Name="Mes" Type="Int16" Nullable="true" />
+          <Property Name="Año" Type="Int16" Nullable="true" />
+          <Property Name="MultiAnual" Type="Boolean" Nullable="true" />
+          <Property Name="Descripcion" Type="String" Nullable="true" />
+          <Property Name="Audit_Fecha" Type="DateTime" Nullable="true" />
+          <Property Name="Audit_Usuario" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="Clasificacion">
+          <Key>
+            <PropertyRef Name="IdClasificacion" /></Key>
+          <Property Name="IdClasificacion" Type="Int32" Nullable="false" />
+          <Property Name="Idbanco" Type="String" Nullable="true" />
+          <Property Name="Descripcion" Type="String" Nullable="true" />
+          <Property Name="Prioridad" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="ClasificacionDet" Relationship="ClearingModel.FK_ClasificacionDet_Clasificacion" FromRole="Clasificacion" ToRole="ClasificacionDet" /></EntityType>
+        <EntityType Name="ClasificacionDet">
+          <Key>
+            <PropertyRef Name="IdCD" /></Key>
+          <Property Name="IdCD" Type="Int32" Nullable="false" />
+          <Property Name="Condicion" Type="String" Nullable="true" />
+          <NavigationProperty Name="Clasificacion" Relationship="ClearingModel.FK_ClasificacionDet_Clasificacion" FromRole="ClasificacionDet" ToRole="Clasificacion" />
+          <Property Name="Propiedad" Type="String" Nullable="true" />
+          <Property Name="Valor" Type="String" Nullable="true" />
+          <Property Name="Continuacion" Type="String" Nullable="true" /></EntityType>
+        <Association Name="FK_ClasificacionDet_Clasificacion">
+          <End Type="ClearingModel.Clasificacion" Role="Clasificacion" Multiplicity="0..1" />
+          <End Type="ClearingModel.ClasificacionDet" Role="ClasificacionDet" Multiplicity="*" /></Association>
+        <EntityType Name="CREC">
+          <Key>
+            <PropertyRef Name="IdCREC" /></Key>
+          <Property Name="IdCREC" Type="Int32" Nullable="false" />
+          <Property Name="CodBanco" Type="Int32" Nullable="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="true" />
+          <Property Name="Importe" Type="Decimal" Nullable="true" />
+          <Property Name="Cantidad" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="CRECDet" Relationship="ClearingModel.FK_CRECDet_CREC" FromRole="CREC" ToRole="CRECDet" /></EntityType>
+        <EntityType Name="CRECDet">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdBanco" Type="String" Nullable="false" />
+          <Property Name="Cuenta" Type="Decimal" Nullable="true" />
+          <Property Name="Numero" Type="Decimal" Nullable="true" />
+          <Property Name="Importe" Type="Decimal" Nullable="true" />
+          <Property Name="Secuencia" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="CREC" Relationship="ClearingModel.FK_CRECDet_CREC" FromRole="CRECDet" ToRole="CREC" /></EntityType>
+        <Association Name="FK_CRECDet_CREC">
+          <End Type="ClearingModel.CREC" Role="CREC" Multiplicity="0..1" />
+          <End Type="ClearingModel.CRECDet" Role="CRECDet" Multiplicity="*" /></Association>
+        <EntityType Name="CHERFII">
+          <Key>
+            <PropertyRef Name="IdCherfii" /></Key>
+          <Property Name="IdCherfii" Type="Int32" Nullable="false" />
+          <Property Name="CtaLibradora" Type="String" Nullable="true" />
+          <Property Name="NroCheque" Type="Decimal" Nullable="true" />
+          <Property Name="Comprobante" Type="Decimal" Nullable="true" />
+          <Property Name="AgenciaCR" Type="String" Nullable="true" />
+          <Property Name="Usuario" Type="String" Nullable="true" />
+          <Property Name="Importe" Type="Decimal" Nullable="true" />
+          <Property Name="FechaProc" Type="DateTime" Nullable="true" />
+          <Property Name="HoraProc" Type="DateTime" Nullable="true" />
+          <Property Name="CtaDeposito" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="CHITCI">
+          <Key>
+            <PropertyRef Name="IdChitci" /></Key>
+          <Property Name="IdChitci" Type="Int32" Nullable="false" />
+          <Property Name="Usuario" Type="String" Nullable="true" />
+          <Property Name="NroMovUsuario" Type="Decimal" Nullable="true" />
+          <Property Name="FechaMov" Type="DateTime" Nullable="true" />
+          <Property Name="CtaDeposito" Type="String" Nullable="true" />
+          <Property Name="Moneda" Type="String" Nullable="true" />
+          <Property Name="Agencia" Type="String" Nullable="true" />
+          <Property Name="TipoUsuario" Type="String" Nullable="true" />
+          <Property Name="Comprobante" Type="Decimal" Nullable="true" />
+          <Property Name="Importe" Type="Decimal" Nullable="true" />
+          <Property Name="CantCheques" Type="Decimal" Nullable="true" />
+          <Property Name="HoraMov" Type="DateTime" Nullable="true" />
+          <Property Name="EstadoProceso" Type="String" Nullable="true" />
+          <Property Name="IdBanco" Type="String" Nullable="true" />
+          <Property Name="IdMoneda" Type="String" Nullable="true" />
+          <Property Name="Existe" Type="Boolean" Nullable="true" />
+          <Property Name="IdLectura" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="PruebaNewId">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nro" Type="Int32" Nullable="true" />
+          <Property Name="Instancia" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="Formalistica">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdBanco" Type="String" Nullable="true" />
+          <Property Name="IdProceso" Type="Int32" Nullable="true" />
+          <Property Name="IdMoneda" Type="String" Nullable="true" />
+          <Property Name="Fecha" Type="DateTime" Nullable="true" />
+          <Property Name="Lotes" Type="Int32" Nullable="true" />
+          <Property Name="Cheques" Type="Int32" Nullable="true" />
+          <Property Name="Importe" Type="Decimal" Nullable="true" /></EntityType>
+        <EntityType Name="LecturasRechazo">
+          <Key>
+            <PropertyRef Name="IdLR" />
+          </Key>
+          <Property Type="Int32" Name="IdLR" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="IdLectura" Nullable="false" />
+          <Property Type="String" Name="IdMotivo" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IdBanco" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="Audit_Fecha" />
+          <Property Type="String" Name="Audit_Usuario" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Lectura" Relationship="ClearingModel.FK_LecturasRechazos_Lecturas" FromRole="LecturasRechazo" ToRole="Lecturas" />
+          <NavigationProperty Name="MotivosRechazo" Relationship="ClearingModel.FK_LecturasRechazos_MotivosRechazo" FromRole="LecturasRechazo" ToRole="MotivosRechazo" />
+        </EntityType>
+        <Association Name="FK_LecturasRechazos_Lecturas">
+          <End Type="ClearingModel.Lecturas" Role="Lecturas" Multiplicity="1" />
+          <End Type="ClearingModel.LecturasRechazo" Role="LecturasRechazo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lecturas">
+              <PropertyRef Name="IdLectura" />
+            </Principal>
+            <Dependent Role="LecturasRechazo">
+              <PropertyRef Name="IdLectura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LecturasRechazos_MotivosRechazo">
+          <End Type="ClearingModel.MotivosRechazo" Role="MotivosRechazo" Multiplicity="1" />
+          <End Type="ClearingModel.LecturasRechazo" Role="LecturasRechazo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivosRechazo">
+              <PropertyRef Name="IdMotivo" />
+              <PropertyRef Name="IdBanco" />
+            </Principal>
+            <Dependent Role="LecturasRechazo">
+              <PropertyRef Name="IdMotivo" />
+              <PropertyRef Name="IdBanco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClearingModelStoreContainer" CdmEntityContainer="Entities">
+          <FunctionImportMapping FunctionImportName="DeleteBancos" FunctionName="ClearingModel.Store.DeleteBancos" />
+          <FunctionImportMapping FunctionImportName="DeleteSucursales" FunctionName="ClearingModel.Store.DeleteSucursales" />
+          <EntitySetMapping Name="Lecturas">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Lecturas)">
+              <MappingFragment StoreEntitySet="Lecturas">
+                <ScalarProperty Name="CD" ColumnName="CD" />
+                <ScalarProperty Name="CantCheques" ColumnName="CantCheques" />
+                <ScalarProperty Name="Editado" ColumnName="Editado" />
+                <ScalarProperty Name="nro_boleta" ColumnName="nro_boleta" />
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+                <ScalarProperty Name="CodTransIVA" ColumnName="CodTransIVA" />
+                <ScalarProperty Name="CodTransComision" ColumnName="CodTransComision" />
+                <ScalarProperty Name="MontoIVA" ColumnName="MontoIVA" />
+                <ScalarProperty Name="MontoComision" ColumnName="MontoComision" />
+                <ScalarProperty Name="IdMotivo" ColumnName="IdMotivo" />
+                <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="operador" ColumnName="operador" />
+                <ScalarProperty Name="cajero" ColumnName="cajero" />
+                <ScalarProperty Name="cod_proceso" ColumnName="cod_proceso" />
+                <ScalarProperty Name="IdLectura" ColumnName="IdLectura" />
+                <ScalarProperty Name="nro_bolsillo" ColumnName="nro_bolsillo" />
+                <ScalarProperty Name="nro_corrida" ColumnName="nro_corrida" />
+                <ScalarProperty Name="cod_banco_emisor" ColumnName="cod_banco_emisor" />
+                <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+                <ScalarProperty Name="cod_maquina" ColumnName="cod_maquina" />
+                <ScalarProperty Name="cuenta_deposito" ColumnName="cuenta_deposito" />
+                <ScalarProperty Name="cadena_captura" ColumnName="cadena_captura" />
+                <ScalarProperty Name="MANO" ColumnName="MANO" />
+                <ScalarProperty Name="ENVIADO" ColumnName="ENVIADO" />
+                <ScalarProperty Name="PAQUETE" ColumnName="PAQUETE" />
+                <ScalarProperty Name="audit_usuario" ColumnName="audit_usuario" />
+                <ScalarProperty Name="CORREGIDO" ColumnName="CORREGIDO" />
+                <ScalarProperty Name="IB_MONTO" ColumnName="IB_MONTO" />
+                <ScalarProperty Name="IB_SER" ColumnName="IB_SER" />
+                <ScalarProperty Name="VERIFICADO" ColumnName="VERIFICADO" />
+                <ScalarProperty Name="fecha_lectura" ColumnName="fecha_lectura" />
+                <ScalarProperty Name="cabecera" ColumnName="cabecera" />
+                <ScalarProperty Name="imagen_reverso" ColumnName="imagen_reverso" />
+                <ScalarProperty Name="imagen_frontal" ColumnName="imagen_frontal" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="cod_camara" ColumnName="cod_camara" />
+                <ScalarProperty Name="cod_banco_receptor" ColumnName="cod_banco_receptor" />
+                <ScalarProperty Name="numero_cheque" ColumnName="numero_cheque" />
+                <ScalarProperty Name="cuenta_cheque" ColumnName="cuenta_cheque" />
+                <ScalarProperty Name="cod_tipdoc" ColumnName="cod_tipdoc" />
+                <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+                <ScalarProperty Name="audit_fecha" ColumnName="audit_fecha" />
+                <ScalarProperty Name="nro_lote" ColumnName="nro_lote" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Bancos">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Bancos)">
+              <MappingFragment StoreEntitySet="Bancos">
+                <ScalarProperty Name="NombreCorto" ColumnName="NombreCorto" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="CuentaPais" ColumnName="CuentaPais" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+                <ScalarProperty Name="cod_banco" ColumnName="cod_banco" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Camaras">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Camara)">
+              <MappingFragment StoreEntitySet="Camara">
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="cod_camara" ColumnName="cod_camara" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Ascii">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Ascii)">
+              <MappingFragment StoreEntitySet="Ascii">
+                <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+                <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+                <ScalarProperty Name="ArchivoDestino1" ColumnName="ArchivoDestino1" />
+                <ScalarProperty Name="ArchivoDestino" ColumnName="ArchivoDestino" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="EstructuraDestino" ColumnName="EstructuraDestino" />
+                <ScalarProperty Name="IdFormato" ColumnName="IdFormato" />
+                <ScalarProperty Name="sql" ColumnName="sql" />
+                <ScalarProperty Name="registro_fin" ColumnName="registro_fin" />
+                <ScalarProperty Name="registro_inicio" ColumnName="registro_inicio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+                <ScalarProperty Name="idcabecera" ColumnName="idcabecera" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Ascii_det">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Ascii_det)">
+              <MappingFragment StoreEntitySet="Ascii_det">
+                <ScalarProperty Name="formato" ColumnName="formato" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="iddetalle" ColumnName="iddetalle" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_Ascii_det_Ascii" TypeName="ClearingModel.FK_Ascii_det_Ascii" StoreEntitySet="Ascii_det">
+            <EndProperty Name="Ascii_det">
+              <ScalarProperty Name="iddetalle" ColumnName="iddetalle" /></EndProperty>
+            <EndProperty Name="Ascii">
+              <ScalarProperty Name="idcabecera" ColumnName="idcabecera" /></EndProperty>
+            <Condition ColumnName="idcabecera" IsNull="false" /></AssociationSetMapping>
+          <EntitySetMapping Name="Formatos">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Formatos)">
+              <MappingFragment StoreEntitySet="Formatos">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdFormato" ColumnName="IdFormato" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Monedas">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Monedas)">
+              <MappingFragment StoreEntitySet="Monedas">
+                <ScalarProperty Name="decimales" ColumnName="decimales" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sucursales">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Sucursales)">
+              <MappingFragment StoreEntitySet="Sucursales">
+                <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+                <ScalarProperty Name="nombre_sucusal" ColumnName="nombre_sucusal" />
+                <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="Bancos_Sucursales_FK1" TypeName="ClearingModel.Bancos_Sucursales_FK1" StoreEntitySet="Sucursales">
+            <EndProperty Name="Sucursales">
+              <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" /></EndProperty>
+            <EndProperty Name="Bancos">
+              <ScalarProperty Name="cod_banco" ColumnName="cod_banco" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="ConfigMICR">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.ConfigMICR)">
+              <MappingFragment StoreEntitySet="ConfigMICR">
+                <ScalarProperty Name="Importe2" ColumnName="Importe2" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Cajero" ColumnName="Cajero" />
+                <ScalarProperty Name="Camara" ColumnName="Camara" />
+                <ScalarProperty Name="BancoReceptor" ColumnName="BancoReceptor" />
+                <ScalarProperty Name="NroDoc" ColumnName="NroDoc" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+                <ScalarProperty Name="BancoEmision" ColumnName="BancoEmision" />
+                <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Documentos">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Tipo_Documentos)">
+              <MappingFragment StoreEntitySet="Tipo_Documentos">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cod_tipdoc" ColumnName="cod_tipdoc" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Cierres">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Cierres)">
+              <MappingFragment StoreEntitySet="Cierres">
+                <ScalarProperty Name="Paquete" ColumnName="Paquete" />
+                <ScalarProperty Name="UltimaEdicion" ColumnName="UltimaEdicion" />
+                <ScalarProperty Name="Cerrado" ColumnName="Cerrado" />
+                <ScalarProperty Name="HoraCierre" ColumnName="HoraCierre" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+                <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdCierre" ColumnName="IdCierre" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MotivosRechazo">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.MotivosRechazo)">
+              <MappingFragment StoreEntitySet="MotivosRechazo">
+                <ScalarProperty Name="AplicaComision" ColumnName="AplicaComision" />
+                <ScalarProperty Name="Audit_Usuario" ColumnName="Audit_Usuario" />
+                <ScalarProperty Name="Audit_Fecha" ColumnName="Audit_Fecha" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="IdMotivoBCP" ColumnName="IdMotivoBCP" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdMotivo" ColumnName="IdMotivo" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CuentasEspeciales">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.CuentasEspeciales)">
+              <MappingFragment StoreEntitySet="CuentasEspeciales">
+                <ScalarProperty Name="Audit_Usuario" ColumnName="Audit_Usuario" />
+                <ScalarProperty Name="Audit_Fecha" ColumnName="Audit_Fecha" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="NombreCuenta" ColumnName="NombreCuenta" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sys_config">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.sys_config)">
+              <MappingFragment StoreEntitySet="sys_config">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="constante" ColumnName="constante" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Feriados">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Feriados)">
+              <MappingFragment StoreEntitySet="Feriados">
+                <ScalarProperty Name="Audit_Usuario" ColumnName="Audit_Usuario" />
+                <ScalarProperty Name="Audit_Fecha" ColumnName="Audit_Fecha" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="MultiAnual" ColumnName="MultiAnual" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="IdFeriado" ColumnName="IdFeriado" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Clasificacion">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Clasificacion)">
+              <MappingFragment StoreEntitySet="Clasificacion">
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Idbanco" ColumnName="Idbanco" />
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ClasificacionDet">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.ClasificacionDet)">
+              <MappingFragment StoreEntitySet="ClasificacionDet">
+                <ScalarProperty Name="Continuacion" ColumnName="Continuacion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
+                <ScalarProperty Name="Condicion" ColumnName="Condicion" />
+                <ScalarProperty Name="IdCD" ColumnName="IdCD" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_ClasificacionDet_Clasificacion" TypeName="ClearingModel.FK_ClasificacionDet_Clasificacion" StoreEntitySet="ClasificacionDet">
+            <EndProperty Name="ClasificacionDet">
+              <ScalarProperty Name="IdCD" ColumnName="IdCD" /></EndProperty>
+            <EndProperty Name="Clasificacion">
+              <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" /></EndProperty>
+            <Condition ColumnName="IdClasificacion" IsNull="false" /></AssociationSetMapping>
+          <EntitySetMapping Name="CREC">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.CREC)">
+              <MappingFragment StoreEntitySet="CREC">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="CodBanco" ColumnName="CodBanco" />
+                <ScalarProperty Name="IdCREC" ColumnName="IdCREC" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CRECDet">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.CRECDet)">
+              <MappingFragment StoreEntitySet="CRECDet">
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_CRECDet_CREC" TypeName="ClearingModel.FK_CRECDet_CREC" StoreEntitySet="CRECDet">
+            <EndProperty Name="CRECDet">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="CREC">
+              <ScalarProperty Name="IdCREC" ColumnName="IdCREC" /></EndProperty>
+            <Condition ColumnName="IdCREC" IsNull="false" /></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="App_VerificaRepetido" FunctionName="ClearingModel.Store.App_VerificaRepetido" />
+          <EntitySetMapping Name="CHERFII">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.CHERFII)">
+              <MappingFragment StoreEntitySet="CHERFII">
+                <ScalarProperty Name="CtaDeposito" ColumnName="CtaDeposito" />
+                <ScalarProperty Name="HoraProc" ColumnName="HoraProc" />
+                <ScalarProperty Name="FechaProc" ColumnName="FechaProc" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="AgenciaCR" ColumnName="AgenciaCR" />
+                <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+                <ScalarProperty Name="NroCheque" ColumnName="NroCheque" />
+                <ScalarProperty Name="CtaLibradora" ColumnName="CtaLibradora" />
+                <ScalarProperty Name="IdCherfii" ColumnName="IdCherfii" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CHITCI">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.CHITCI)">
+              <MappingFragment StoreEntitySet="CHITCI">
+                <ScalarProperty Name="IdLectura" ColumnName="IdLectura" />
+                <ScalarProperty Name="Existe" ColumnName="Existe" />
+                <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="EstadoProceso" ColumnName="EstadoProceso" />
+                <ScalarProperty Name="HoraMov" ColumnName="HoraMov" />
+                <ScalarProperty Name="CantCheques" ColumnName="CantCheques" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="CtaDeposito" ColumnName="CtaDeposito" />
+                <ScalarProperty Name="FechaMov" ColumnName="FechaMov" />
+                <ScalarProperty Name="NroMovUsuario" ColumnName="NroMovUsuario" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="IdChitci" ColumnName="IdChitci" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NewId" FunctionName="ClearingModel.Store.NewId" />
+          <EntitySetMapping Name="PruebaNewId">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.PruebaNewId)">
+              <MappingFragment StoreEntitySet="PruebaNewId">
+                <ScalarProperty Name="Instancia" ColumnName="Instancia" />
+                <ScalarProperty Name="Nro" ColumnName="Nro" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="App_GetLecturas" FunctionName="ClearingModel.Store.App_GetLecturas" />
+          <EntitySetMapping Name="Formalistica">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Formalistica)">
+              <MappingFragment StoreEntitySet="Formalistica">
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Cheques" ColumnName="Cheques" />
+                <ScalarProperty Name="Lotes" ColumnName="Lotes" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+                <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="App_BuscarCHITCI" FunctionName="ClearingModel.Store.App_BuscarCHITCI" />
+          <EntitySetMapping Name="LecturasRechazos">
+            <EntityTypeMapping TypeName="ClearingModel.LecturasRechazo">
+              <MappingFragment StoreEntitySet="LecturasRechazos">
+                <ScalarProperty Name="Audit_Usuario" ColumnName="Audit_Usuario" />
+                <ScalarProperty Name="Audit_Fecha" ColumnName="Audit_Fecha" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="IdMotivo" ColumnName="IdMotivo" />
+                <ScalarProperty Name="IdLectura" ColumnName="IdLectura" />
+                <ScalarProperty Name="IdLR" ColumnName="IdLR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ClearingModel" ZoomLevel="75" DisplayType="false" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <EntityTypeShape EntityType="ClearingModel.Lecturas" Width="1.5" PointX="5.375" PointY="0.75" Height="7.5570279947916656" />
+        <EntityTypeShape EntityType="ClearingModel.Bancos" Width="1.5" PointX="0.75" PointY="7.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ClearingModel.Camara" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" />
+        <EntityTypeShape EntityType="ClearingModel.Ascii" Width="1.5" PointX="7.375" PointY="1" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="ClearingModel.Ascii_det" Width="1.5" PointX="9.625" PointY="1" Height="2.3648893229166674" />
+        <AssociationConnector Association="ClearingModel.FK_Ascii_det_Ascii">
+          <ConnectorPoint PointX="8.875" PointY="2.2785953776041667" />
+          <ConnectorPoint PointX="9.625" PointY="2.2785953776041667" /></AssociationConnector>
+        <EntityTypeShape EntityType="ClearingModel.Formatos" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4033821614583335" />
+        <EntityTypeShape EntityType="ClearingModel.Monedas" Width="1.5" PointX="7.375" PointY="5.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="ClearingModel.Sucursales" Width="1.5" PointX="3" PointY="7.75" Height="1.7879850260416674" />
+        <AssociationConnector Association="ClearingModel.Bancos_Sucursales_FK1">
+          <ConnectorPoint PointX="2.25" PointY="8.6439925130208337" />
+          <ConnectorPoint PointX="3" PointY="8.6439925130208337" /></AssociationConnector>
+        <EntityTypeShape EntityType="ClearingModel.ConfigMICR" Width="1.5" PointX="7.375" PointY="8.75" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="ClearingModel.Tipo_Documentos" Width="1.5" PointX="9.375" PointY="4.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="ClearingModel.Cierres" Width="1.5" PointX="9.375" PointY="7.75" Height="2.5571907552083326" />
+        <EntityTypeShape EntityType="ClearingModel.MotivosRechazo" Width="1.5" PointX="0.75" PointY="10.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="ClearingModel.CuentasEspeciales" Width="1.5" PointX="3.375" PointY="10.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="ClearingModel.sys_config" Width="1.5" PointX="11.375" PointY="4.75" Height="1.4033821614583335" />
+        <EntityTypeShape EntityType="ClearingModel.Feriados" Width="1.5" PointX="11.375" PointY="7.75" Height="2.5571907552083326" />
+        <EntityTypeShape EntityType="ClearingModel.Clasificacion" Width="1.5" PointX="9.375" PointY="11.875" Height="1.9802864583333353" />
+        <EntityTypeShape EntityType="ClearingModel.ClasificacionDet" Width="1.5" PointX="11.625" PointY="12.125" Height="1.5956835937499996" />
+        <AssociationConnector Association="ClearingModel.FK_ClasificacionDet_Clasificacion">
+          <ConnectorPoint PointX="10.875" PointY="12.922841796875" />
+          <ConnectorPoint PointX="11.625" PointY="12.922841796875" /></AssociationConnector>
+        <EntityTypeShape EntityType="ClearingModel.CREC" Width="1.5" PointX="12.375" PointY="1" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="ClearingModel.CRECDet" Width="1.5" PointX="14.625" PointY="1" Height="2.3648893229166674" />
+        <AssociationConnector Association="ClearingModel.FK_CRECDet_CREC">
+          <ConnectorPoint PointX="13.875" PointY="2.0862939453125" />
+          <ConnectorPoint PointX="14.625" PointY="2.0862939453125" /></AssociationConnector>
+        <EntityTypeShape EntityType="ClearingModel.CHERFII" Width="1.5" PointX="3.375" PointY="13.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="ClearingModel.CHITCI" Width="1.5" PointX="13.375" PointY="4.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="ClearingModel.PruebaNewId" Width="1.5" PointX="5.375" PointY="13.75" Height="1.2110807291666674" />
+        <EntityTypeShape EntityType="ClearingModel.Formalistica" Width="1.5" PointX="0.75" PointY="14.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="ClearingModel.LecturasRechazo" Width="1.5" PointX="14.625" PointY="9.875" Height="2.5571907552083388" />
+        <AssociationConnector Association="ClearingModel.FK_LecturasRechazos_Lecturas" >
+          <ConnectorPoint PointX="6.125" PointY="10.230042317708332" />
+          <ConnectorPoint PointX="6.125" PointY="12.518697916666667" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="12.518697916666667" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="12.518697916666667" />
+          <ConnectorPoint PointX="9.125" PointY="12.518697916666667" />
+          <ConnectorPoint PointX="9.125" PointY="11.283396809895834" />
+          <ConnectorPoint PointX="14.625" PointY="11.283396809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearingModel.FK_LecturasRechazos_MotivosRechazo" >
+          <ConnectorPoint PointX="1.5" PointY="10.75" />
+          <ConnectorPoint PointX="1.5" PointY="10.5" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="10.5" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="10.5" />
+          <ConnectorPoint PointX="7.125" PointY="10.5" />
+          <ConnectorPoint PointX="7.125" PointY="12.768697916666667" />
+          <ConnectorPoint PointX="9.25" PointY="12.768697916666667" />
+          <ConnectorPoint PointX="9.25" PointY="11.579200904947911" />
+          <ConnectorPoint PointX="14.625" PointY="11.579200904947911" />
+        </AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="ClearingConnectionString">
+      <rd:DataSourceID>fade5d58-391a-4a1a-a9d9-1c8abdf42d3d</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>
+        </DataProvider>
+        <ConnectString>
+        </ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>f0a8e480-8ee3-4f2f-a1af-87f1611d462c</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="dsReportes_EAvisoDebito">
+      <Fields>
+        <Field Name="cod_banco">
+          <DataField>cod_banco</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreBanco">
+          <DataField>NombreBanco</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cod_banco_receptor">
+          <DataField>cod_banco_receptor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="banco_receptor">
+          <DataField>banco_receptor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Monto">
+          <DataField>Monto</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cuenta_deposito">
+          <DataField>cuenta_deposito</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Numero_cheque">
+          <DataField>Numero_cheque</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ClearingConnectionString</DataSourceName>
+        <CommandText>SELECT        l.cod_banco, b.nombre_banco AS NombreBanco, l.cod_banco_receptor, b1.nombre_banco AS banco_receptor, Monto, CONVERT(varchar(10), l.fecha_lectura, 105) AS Fecha,
+cuenta_deposito,Numero_cheque
+FROM            Lecturas AS l LEFT OUTER JOIN
+                         Bancos AS b ON l.cod_banco = b.cod_banco LEFT OUTER JOIN
+                         Bancos AS b1 ON l.cod_banco_receptor = b1.cod_banco
+WHERE        (l.fecha_lectura = @fecha) AND (l.cod_proceso = 2) AND (l.cod_banco = @Banco) AND (l.cod_tipdoc IN ('00', '01', '02', '03')) AND 
+                         (l.cod_moneda = @Cod_Moneda)
+ORDER BY l.cod_banco_receptor,numero_cheque</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>dsReportes</rd:DataSetName>
+        <rd:TableName>EAvisoDebito</rd:TableName>
+        <rd:TableAdapterName>EAvisoDebitoTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Width>12.69841cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Style>
+          <Color>SteelBlue</Color>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.91429cm</Height>
+        <Value>rpt_EAvisoDebitoUSD</Value>
+      </Textbox>
+      <List Name="List1">
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!cod_banco_receptor.Value</SortExpression>
+            <Direction>Ascending</Direction>
+          </SortBy>
+        </Sorting>
+        <DataSetName>dsReportes_EAvisoDebito</DataSetName>
+        <ReportItems>
+          <Textbox Name="cod_banco_receptor">
+            <rd:DefaultName>cod_banco_receptor</rd:DefaultName>
+            <Style>
+              <Color>SlateGray</Color>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>14pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Height>0.68571cm</Height>
+            <Value>=Fields!cod_banco_receptor.Value</Value>
+          </Textbox>
+          <Table Name="table1">
+            <DataSetName>dsReportes_EAvisoDebito</DataSetName>
+            <Top>1.26984cm</Top>
+            <Width>7.61904cm</Width>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Monto">
+                          <rd:DefaultName>Monto</rd:DefaultName>
+                          <Style>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Tahoma</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Monto.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Numero_cheque">
+                          <rd:DefaultName>Numero_cheque</rd:DefaultName>
+                          <Style>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Tahoma</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Numero_cheque.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="cuenta_deposito">
+                          <rd:DefaultName>cuenta_deposito</rd:DefaultName>
+                          <Style>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Tahoma</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!cuenta_deposito.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.53333cm</Height>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontSize>11pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Monto</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontSize>11pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Numero cheque</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontSize>11pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>cuenta deposito</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.55873cm</Height>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>2.53968cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>2.53968cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>2.53968cm</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+        </ReportItems>
+        <Top>0.91429cm</Top>
+        <Style>
+          <Color>SlateGray</Color>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+        </Style>
+        <Grouping Name="list1_cod_banco_receptor">
+          <GroupExpressions>
+            <GroupExpression>=Fields!cod_banco_receptor.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>3.27619cm</Height>
+  </Body>
+  <Language>es-ES</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

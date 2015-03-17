@@ -1,0 +1,70 @@
+/************************************************************/
+/*****              RegisterModule                      *****/
+/*****                                                  *****/
+/***** Use this script to register a module in the      *****/
+/***** database using Query Analyzer                    *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+exec {databaseOwner}[{objectQualifier}AddDesktopModule]
+  @ModuleName = N'ClearingModule', 
+  @FolderName = N'ClearingModule', 
+  @FriendlyName = N'ClearingModule', 
+  @Description = N'A ClearingModule module', 
+  @Version = N'01.00.00', 
+  @IsPremium = 0, 
+  @IsAdmin = 0, 
+  @BusinessController = N'Futura.Modules.ClearingModule.ClearingModuleController', 
+  @SupportedFeatures = 3
+  @CompatibleVersions = ""
+  @Dependencies = ""
+  @Permissions = ""
+
+declare @DesktopModuleId int
+select @DesktopModuleId = DesktopModuleId 
+from {databaseOwner}[{objectQualifier}DesktopModules] 
+where ModuleName = 'ClearingModule'
+
+exec {databaseOwner}[{objectQualifier}AddModuleDefinition] @DesktopModuleId, 
+  @FriendlyName = N'ClearingModule', 
+  @DefaultCacheTime = 0
+
+declare @ModuleDefID int
+select @ModuleDefID = ModuleDefID 
+from {databaseOwner}[{objectQualifier}ModuleDefinitions] 
+where FriendlyName = 'ClearingModule'
+
+exec {databaseOwner}[{objectQualifier}AddModuleControl]
+  @ModuleDefID, 
+  @ControlKey = NULL, 
+  @ControlTitle = NULL, 
+  @ControlSrc = N'DesktopModules/ClearingModule/ViewClearingModule.ascx', 
+  @IconFile = NULL, 
+  @ControlType = 0, 
+  @ViewOrder = NULL, 
+  @HelpUrl = NULL
+
+exec {databaseOwner}[{objectQualifier}AddModuleControl]
+  @ModuleDefID, 
+  @ControlKey = 'Edit', 
+  @ControlTitle = 'Edit Content', 
+  @ControlSrc = N'DesktopModules/ClearingModule/EditClearingModule.ascx', 
+  @IconFile = NULL, 
+  @ControlType = 1, 
+  @ViewOrder = NULL, 
+  @HelpUrl = NULL
+
+exec {databaseOwner}[{objectQualifier}AddModuleControl]
+  @ModuleDefID, 
+  @ControlKey = 'Settings', 
+  @ControlTitle = 'ClearingModule Settings', 
+  @ControlSrc = N'DesktopModules/ClearingModule/Settings.ascx', 
+  @IconFile = NULL, 
+  @ControlType = 1, 
+  @ViewOrder = NULL, 
+  @HelpUrl = NULL

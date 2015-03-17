@@ -1,0 +1,1679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ClearingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="ClearingModelStoreContainer">
+          <EntitySet Name="Bancos" EntityType="ClearingModel.Store.Bancos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cabeceras" EntityType="ClearingModel.Store.Cabeceras" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Camara" EntityType="ClearingModel.Store.Camara" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Configuracion" EntityType="ClearingModel.Store.Configuracion" store:Type="Tables" store:Schema="dbo" store:Name="Configuracion">
+            <DefiningQuery>SELECT 
+      [Configuracion].[Sucursal] AS [Sucursal], 
+      [Configuracion].[Operacion] AS [Operacion], 
+      [Configuracion].[Filtrado] AS [Filtrado], 
+      [Configuracion].[NomMAYORES] AS [NomMAYORES], 
+      [Configuracion].[NomCMAYORES] AS [NomCMAYORES], 
+      [Configuracion].[DestinoMAYORES] AS [DestinoMAYORES], 
+      [Configuracion].[NomASCII] AS [NomASCII], 
+      [Configuracion].[NomCASCII] AS [NomCASCII], 
+      [Configuracion].[DestinoASCII] AS [DestinoASCII], 
+      [Configuracion].[NomDBF] AS [NomDBF], 
+      [Configuracion].[NomCDBF] AS [NomCDBF], 
+      [Configuracion].[DestinoDBF] AS [DestinoDBF], 
+      [Configuracion].[UtilizarConfiguracion] AS [UtilizarConfiguracion], 
+      [Configuracion].[DirectorioBackup] AS [DirectorioBackup]
+      FROM [dbo].[Configuracion] AS [Configuracion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Detalle_Cheques" EntityType="ClearingModel.Store.Detalle_Cheques" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estados" EntityType="ClearingModel.Store.Estados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Fin" EntityType="ClearingModel.Store.Fin" store:Type="Tables" store:Schema="dbo" store:Name="Fin">
+            <DefiningQuery>SELECT 
+      [Fin].[Finalizado] AS [Finalizado]
+      FROM [dbo].[Fin] AS [Fin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InterBco" EntityType="ClearingModel.Store.InterBco" store:Type="Tables" store:Schema="dbo" store:Name="InterBco">
+            <DefiningQuery>SELECT 
+      [InterBco].[LOTE] AS [LOTE], 
+      [InterBco].[CAJERO] AS [CAJERO], 
+      [InterBco].[SUCURSAL] AS [SUCURSAL], 
+      [InterBco].[SECUENCIA] AS [SECUENCIA], 
+      [InterBco].[FECHA] AS [FECHA], 
+      [InterBco].[CUENTA] AS [CUENTA], 
+      [InterBco].[BOLETA] AS [BOLETA], 
+      [InterBco].[MONTO] AS [MONTO], 
+      [InterBco].[CANTCHEQUES] AS [CANTCHEQUES], 
+      [InterBco].[EXISTE] AS [EXISTE]
+      FROM [dbo].[InterBco] AS [InterBco]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Lecturas" EntityType="ClearingModel.Store.Lecturas" store:Type="Tables" store:Schema="dbo" store:Name="Lecturas">
+            <DefiningQuery>SELECT 
+      [Lecturas].[LOTE] AS [LOTE], 
+      [Lecturas].[HORA] AS [HORA], 
+      [Lecturas].[CL_BANCO] AS [CL_BANCO], 
+      [Lecturas].[CL_DOC] AS [CL_DOC], 
+      [Lecturas].[CL_CTA] AS [CL_CTA], 
+      [Lecturas].[CL_SER] AS [CL_SER], 
+      [Lecturas].[CL_BCORE] AS [CL_BCORE], 
+      [Lecturas].[CL_CAM] AS [CL_CAM], 
+      [Lecturas].[CL_MONTO] AS [CL_MONTO], 
+      [Lecturas].[ImageFront] AS [ImageFront], 
+      [Lecturas].[ImageBack] AS [ImageBack], 
+      [Lecturas].[CABECERA] AS [CABECERA], 
+      [Lecturas].[FECHA] AS [FECHA], 
+      [Lecturas].[VERIFICADO] AS [VERIFICADO], 
+      [Lecturas].[IB_SER] AS [IB_SER], 
+      [Lecturas].[IB_MONTO] AS [IB_MONTO], 
+      [Lecturas].[CORREGIDO] AS [CORREGIDO], 
+      [Lecturas].[REC0] AS [REC0], 
+      [Lecturas].[REC1] AS [REC1], 
+      [Lecturas].[REC2] AS [REC2], 
+      [Lecturas].[REC3] AS [REC3], 
+      [Lecturas].[REC4] AS [REC4], 
+      [Lecturas].[REC5] AS [REC5], 
+      [Lecturas].[REC6] AS [REC6], 
+      [Lecturas].[REC7] AS [REC7], 
+      [Lecturas].[USUARIO] AS [USUARIO], 
+      [Lecturas].[PAQUETE] AS [PAQUETE], 
+      [Lecturas].[ENVIADO] AS [ENVIADO], 
+      [Lecturas].[MANO] AS [MANO], 
+      [Lecturas].[Ingreso] AS [Ingreso], 
+      [Lecturas].[log] AS [log], 
+      [Lecturas].[CTA_DEP] AS [CTA_DEP]
+      FROM [dbo].[Lecturas] AS [Lecturas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LecturasAnteriores" EntityType="ClearingModel.Store.LecturasAnteriores" store:Type="Tables" store:Schema="dbo" store:Name="LecturasAnteriores">
+            <DefiningQuery>SELECT 
+      [LecturasAnteriores].[LOTE] AS [LOTE], 
+      [LecturasAnteriores].[HORA] AS [HORA], 
+      [LecturasAnteriores].[CL_BANCO] AS [CL_BANCO], 
+      [LecturasAnteriores].[CL_DOC] AS [CL_DOC], 
+      [LecturasAnteriores].[CL_CTA] AS [CL_CTA], 
+      [LecturasAnteriores].[CL_SER] AS [CL_SER], 
+      [LecturasAnteriores].[CL_BCORE] AS [CL_BCORE], 
+      [LecturasAnteriores].[CL_CAM] AS [CL_CAM], 
+      [LecturasAnteriores].[CL_MONTO] AS [CL_MONTO], 
+      [LecturasAnteriores].[ImageFront] AS [ImageFront], 
+      [LecturasAnteriores].[ImageBack] AS [ImageBack], 
+      [LecturasAnteriores].[CABECERA] AS [CABECERA], 
+      [LecturasAnteriores].[FECHA] AS [FECHA], 
+      [LecturasAnteriores].[REC0] AS [REC0], 
+      [LecturasAnteriores].[REC1] AS [REC1], 
+      [LecturasAnteriores].[REC2] AS [REC2], 
+      [LecturasAnteriores].[REC3] AS [REC3], 
+      [LecturasAnteriores].[REC4] AS [REC4], 
+      [LecturasAnteriores].[REC5] AS [REC5], 
+      [LecturasAnteriores].[REC6] AS [REC6], 
+      [LecturasAnteriores].[REC7] AS [REC7], 
+      [LecturasAnteriores].[USUARIO] AS [USUARIO], 
+      [LecturasAnteriores].[PAQUETE] AS [PAQUETE], 
+      [LecturasAnteriores].[ENVIADO] AS [ENVIADO], 
+      [LecturasAnteriores].[MANO] AS [MANO], 
+      [LecturasAnteriores].[INGRESO] AS [INGRESO], 
+      [LecturasAnteriores].[Log] AS [Log], 
+      [LecturasAnteriores].[CTA_DEP] AS [CTA_DEP]
+      FROM [dbo].[LecturasAnteriores] AS [LecturasAnteriores]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LecturasBCP" EntityType="ClearingModel.Store.LecturasBCP" store:Type="Tables" store:Schema="dbo" store:Name="LecturasBCP">
+            <DefiningQuery>SELECT 
+      [LecturasBCP].[LOTE] AS [LOTE], 
+      [LecturasBCP].[HORA] AS [HORA], 
+      [LecturasBCP].[CL_BANCO] AS [CL_BANCO], 
+      [LecturasBCP].[CL_DOC] AS [CL_DOC], 
+      [LecturasBCP].[CL_CTA] AS [CL_CTA], 
+      [LecturasBCP].[CL_SER] AS [CL_SER], 
+      [LecturasBCP].[CL_BCORE] AS [CL_BCORE], 
+      [LecturasBCP].[CL_CAM] AS [CL_CAM], 
+      [LecturasBCP].[CL_MONTO] AS [CL_MONTO], 
+      [LecturasBCP].[ImageFront] AS [ImageFront], 
+      [LecturasBCP].[ImageBack] AS [ImageBack], 
+      [LecturasBCP].[CABECERA] AS [CABECERA], 
+      [LecturasBCP].[FECHA] AS [FECHA], 
+      [LecturasBCP].[VERIFICADO] AS [VERIFICADO], 
+      [LecturasBCP].[IB_SER] AS [IB_SER], 
+      [LecturasBCP].[IB_MONTO] AS [IB_MONTO], 
+      [LecturasBCP].[CORREGIDO] AS [CORREGIDO], 
+      [LecturasBCP].[SECUENCIA] AS [SECUENCIA], 
+      [LecturasBCP].[USUARIO] AS [USUARIO], 
+      [LecturasBCP].[PAQUETE] AS [PAQUETE], 
+      [LecturasBCP].[ENVIADO] AS [ENVIADO], 
+      [LecturasBCP].[MANO] AS [MANO]
+      FROM [dbo].[LecturasBCP] AS [LecturasBCP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Maquinas" EntityType="ClearingModel.Store.Maquinas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Monedas" EntityType="ClearingModel.Store.Monedas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Procesos" EntityType="ClearingModel.Store.Procesos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sucursales" EntityType="ClearingModel.Store.Sucursales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBUSUAR" EntityType="ClearingModel.Store.TBUSUAR" store:Type="Tables" store:Schema="dbo" store:Name="TBUSUAR">
+            <DefiningQuery>SELECT 
+      [TBUSUAR].[TUOPERA] AS [TUOPERA], 
+      [TBUSUAR].[TUNOMBR] AS [TUNOMBR], 
+      [TBUSUAR].[TUUSUAR] AS [TUUSUAR], 
+      [TBUSUAR].[TUPASSW] AS [TUPASSW], 
+      [TBUSUAR].[TUACC01] AS [TUACC01], 
+      [TBUSUAR].[TUACC02] AS [TUACC02], 
+      [TBUSUAR].[TUACC03] AS [TUACC03], 
+      [TBUSUAR].[TUACC04] AS [TUACC04], 
+      [TBUSUAR].[TUACC05] AS [TUACC05], 
+      [TBUSUAR].[TUACC06] AS [TUACC06], 
+      [TBUSUAR].[TUACC07] AS [TUACC07]
+      FROM [dbo].[TBUSUAR] AS [TBUSUAR]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tipo_Documentos" EntityType="ClearingModel.Store.Tipo_Documentos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="ClearingModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Bancos_Cabeceras_FK1" Association="ClearingModel.Store.Bancos_Cabeceras_FK1">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Bancos_Sucursales_FK1" Association="ClearingModel.Store.Bancos_Sucursales_FK1">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="Sucursales" EntitySet="Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="Cabeceras_Detalle_Cheques_FK1" Association="ClearingModel.Store.Cabeceras_Detalle_Cheques_FK1">
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+            <End Role="Detalle_Cheques" EntitySet="Detalle_Cheques" />
+          </AssociationSet>
+          <AssociationSet Name="Camara_Cabeceras_FK1" Association="ClearingModel.Store.Camara_Cabeceras_FK1">
+            <End Role="Camara" EntitySet="Camara" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bancos_Estados" Association="ClearingModel.Store.FK_Bancos_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Bancos" EntitySet="Bancos" />
+          </AssociationSet>
+          <AssociationSet Name="Maquinas_Cabeceras_FK1" Association="ClearingModel.Store.Maquinas_Cabeceras_FK1">
+            <End Role="Maquinas" EntitySet="Maquinas" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Monedas_Cabeceras_FK1" Association="ClearingModel.Store.Monedas_Cabeceras_FK1">
+            <End Role="Monedas" EntitySet="Monedas" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Procesos_Cabeceras_FK1" Association="ClearingModel.Store.Procesos_Cabeceras_FK1">
+            <End Role="Procesos" EntitySet="Procesos" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Tipo_Documentos_Cabeceras_FK1" Association="ClearingModel.Store.Tipo_Documentos_Cabeceras_FK1">
+            <End Role="Tipo_Documentos" EntitySet="Tipo_Documentos" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Tipo_Documentos_Detalle_Cheques_FK1" Association="ClearingModel.Store.Tipo_Documentos_Detalle_Cheques_FK1">
+            <End Role="Tipo_Documentos" EntitySet="Tipo_Documentos" />
+            <End Role="Detalle_Cheques" EntitySet="Detalle_Cheques" />
+          </AssociationSet>
+          <AssociationSet Name="Usuarios_Cabeceras_FK1" Association="ClearingModel.Store.Usuarios_Cabeceras_FK1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Usuarios_Detalle_Cheques_FK1" Association="ClearingModel.Store.Usuarios_Detalle_Cheques_FK1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Detalle_Cheques" EntitySet="Detalle_Cheques" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bancos">
+          <Key>
+            <PropertyRef Name="cod_banco" />
+          </Key>
+          <Property Name="cod_banco" Type="int" Nullable="false" />
+          <Property Name="nombre_banco" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cabeceras">
+          <Key>
+            <PropertyRef Name="id_cabecera" />
+          </Key>
+          <Property Name="id_cabecera" Type="int" Nullable="false" />
+          <Property Name="nro_lote" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cod_banco_receptor" Type="int" />
+          <Property Name="cuenta_deposito" Type="int" />
+          <Property Name="monto_total" Type="int" />
+          <Property Name="cod_maquina" Type="int" />
+          <Property Name="cod_sucursal" Type="int" />
+          <Property Name="imagen_frontal" Type="varchar" MaxLength="30" />
+          <Property Name="nro_corrida" Type="int" />
+          <Property Name="nro_bolsillo" Type="int" />
+          <Property Name="cod_camara" Type="int" />
+          <Property Name="cod_banco" Type="int" />
+          <Property Name="cod_moneda" Type="char" MaxLength="3" />
+          <Property Name="cod_proceso" Type="int" />
+          <Property Name="cod_tipo_documento" Type="int" />
+          <Property Name="cadena_captura" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_lectura" Type="datetime" />
+          <Property Name="audit_usuario" Type="int" />
+          <Property Name="audit_fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Camara">
+          <Key>
+            <PropertyRef Name="cod_camara" />
+          </Key>
+          <Property Name="cod_camara" Type="int" Nullable="false" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.Configuracion' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="Configuracion">
+          <Key>
+            <PropertyRef Name="UtilizarConfiguracion" />
+          </Key>
+          <Property Name="Sucursal" Type="nvarchar" MaxLength="2" />
+          <Property Name="Operacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Filtrado" Type="nvarchar" MaxLength="50" />
+          <Property Name="NomMAYORES" Type="nvarchar" MaxLength="50" />
+          <Property Name="NomCMAYORES" Type="nvarchar" MaxLength="50" />
+          <Property Name="DestinoMAYORES" Type="nvarchar" MaxLength="150" />
+          <Property Name="NomASCII" Type="nvarchar" MaxLength="50" />
+          <Property Name="NomCASCII" Type="nvarchar" MaxLength="50" />
+          <Property Name="DestinoASCII" Type="nvarchar" MaxLength="150" />
+          <Property Name="NomDBF" Type="nvarchar" MaxLength="50" />
+          <Property Name="NomCDBF" Type="nvarchar" MaxLength="50" />
+          <Property Name="DestinoDBF" Type="nvarchar" MaxLength="150" />
+          <Property Name="UtilizarConfiguracion" Type="bit" Nullable="false" />
+          <Property Name="DirectorioBackup" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Detalle_Cheques">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="int" Nullable="false" />
+          <Property Name="id_cabecera" Type="int" />
+          <Property Name="cod_banco_emisor" Type="int" />
+          <Property Name="cod_tipo_documento" Type="int" />
+          <Property Name="numero_cheque" Type="int" />
+          <Property Name="numero_cuenta_librador" Type="int" />
+          <Property Name="cod_banco_receptor" Type="int" />
+          <Property Name="monto_cheque" Type="int" />
+          <Property Name="imagen_frontal_ch" Type="varchar" MaxLength="30" />
+          <Property Name="imagen_reverso_ch" Type="varchar" MaxLength="30" />
+          <Property Name="nro_corrida" Type="int" />
+          <Property Name="nro_bolsillo" Type="int" />
+          <Property Name="cadena_captura" Type="varchar" MaxLength="20" />
+          <Property Name="audit_fecha" Type="datetime" />
+          <Property Name="audit_usuario" Type="int" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="cod_estado" />
+          </Key>
+          <Property Name="cod_estado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_estado" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="tabla" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.Fin' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="Fin">
+          <Key>
+            <PropertyRef Name="Finalizado" />
+          </Key>
+          <Property Name="Finalizado" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.InterBco' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="InterBco">
+          <Key>
+            <PropertyRef Name="EXISTE" />
+          </Key>
+          <Property Name="LOTE" Type="int" />
+          <Property Name="CAJERO" Type="nvarchar" MaxLength="50" />
+          <Property Name="SUCURSAL" Type="int" />
+          <Property Name="SECUENCIA" Type="nvarchar" MaxLength="8" />
+          <Property Name="FECHA" Type="nvarchar" MaxLength="50" />
+          <Property Name="CUENTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="BOLETA" Type="nvarchar" MaxLength="50" />
+          <Property Name="MONTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="CANTCHEQUES" Type="int" />
+          <Property Name="EXISTE" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.Lecturas' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="Lecturas">
+          <Key>
+            <PropertyRef Name="VERIFICADO" />
+            <PropertyRef Name="IB_MONTO" />
+            <PropertyRef Name="CORREGIDO" />
+            <PropertyRef Name="ENVIADO" />
+            <PropertyRef Name="MANO" />
+            <PropertyRef Name="Ingreso" />
+          </Key>
+          <Property Name="LOTE" Type="nvarchar" MaxLength="1" />
+          <Property Name="HORA" Type="nvarchar" MaxLength="8" />
+          <Property Name="CL_BANCO" Type="nvarchar" MaxLength="120" />
+          <Property Name="CL_DOC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_CTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_SER" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_BCORE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_CAM" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_MONTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageFront" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageBack" Type="nvarchar" MaxLength="50" />
+          <Property Name="CABECERA" Type="int" />
+          <Property Name="FECHA" Type="nvarchar" MaxLength="10" />
+          <Property Name="VERIFICADO" Type="bit" Nullable="false" />
+          <Property Name="IB_SER" Type="nvarchar" MaxLength="50" />
+          <Property Name="IB_MONTO" Type="bit" Nullable="false" />
+          <Property Name="CORREGIDO" Type="bit" Nullable="false" />
+          <Property Name="REC0" Type="int" />
+          <Property Name="REC1" Type="int" />
+          <Property Name="REC2" Type="int" />
+          <Property Name="REC3" Type="int" />
+          <Property Name="REC4" Type="int" />
+          <Property Name="REC5" Type="int" />
+          <Property Name="REC6" Type="int" />
+          <Property Name="REC7" Type="int" />
+          <Property Name="USUARIO" Type="int" />
+          <Property Name="PAQUETE" Type="int" />
+          <Property Name="ENVIADO" Type="bit" Nullable="false" />
+          <Property Name="MANO" Type="bit" Nullable="false" />
+          <Property Name="Ingreso" Type="int" Nullable="false" />
+          <Property Name="log" Type="nvarchar" MaxLength="100" />
+          <Property Name="CTA_DEP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.LecturasAnteriores' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="LecturasAnteriores">
+          <Key>
+            <PropertyRef Name="ENVIADO" />
+            <PropertyRef Name="MANO" />
+          </Key>
+          <Property Name="LOTE" Type="nvarchar" MaxLength="1" />
+          <Property Name="HORA" Type="nvarchar" MaxLength="8" />
+          <Property Name="CL_BANCO" Type="nvarchar" MaxLength="120" />
+          <Property Name="CL_DOC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_CTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_SER" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_BCORE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_CAM" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_MONTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageFront" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageBack" Type="nvarchar" MaxLength="50" />
+          <Property Name="CABECERA" Type="int" />
+          <Property Name="FECHA" Type="nvarchar" MaxLength="10" />
+          <Property Name="REC0" Type="int" />
+          <Property Name="REC1" Type="int" />
+          <Property Name="REC2" Type="int" />
+          <Property Name="REC3" Type="int" />
+          <Property Name="REC4" Type="int" />
+          <Property Name="REC5" Type="int" />
+          <Property Name="REC6" Type="int" />
+          <Property Name="REC7" Type="int" />
+          <Property Name="USUARIO" Type="int" />
+          <Property Name="PAQUETE" Type="int" />
+          <Property Name="ENVIADO" Type="bit" Nullable="false" />
+          <Property Name="MANO" Type="bit" Nullable="false" />
+          <Property Name="INGRESO" Type="int" />
+          <Property Name="Log" Type="nvarchar" MaxLength="150" />
+          <Property Name="CTA_DEP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.LecturasBCP' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="LecturasBCP">
+          <Key>
+            <PropertyRef Name="VERIFICADO" />
+            <PropertyRef Name="IB_MONTO" />
+            <PropertyRef Name="CORREGIDO" />
+            <PropertyRef Name="ENVIADO" />
+            <PropertyRef Name="MANO" />
+          </Key>
+          <Property Name="LOTE" Type="nvarchar" MaxLength="1" />
+          <Property Name="HORA" Type="nvarchar" MaxLength="8" />
+          <Property Name="CL_BANCO" Type="nvarchar" MaxLength="120" />
+          <Property Name="CL_DOC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_CTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_SER" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_BCORE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_CAM" Type="nvarchar" MaxLength="50" />
+          <Property Name="CL_MONTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageFront" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageBack" Type="nvarchar" MaxLength="50" />
+          <Property Name="CABECERA" Type="int" />
+          <Property Name="FECHA" Type="nvarchar" MaxLength="10" />
+          <Property Name="VERIFICADO" Type="bit" Nullable="false" />
+          <Property Name="IB_SER" Type="nvarchar" MaxLength="50" />
+          <Property Name="IB_MONTO" Type="bit" Nullable="false" />
+          <Property Name="CORREGIDO" Type="bit" Nullable="false" />
+          <Property Name="SECUENCIA" Type="int" />
+          <Property Name="USUARIO" Type="int" />
+          <Property Name="PAQUETE" Type="int" />
+          <Property Name="ENVIADO" Type="bit" Nullable="false" />
+          <Property Name="MANO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maquinas">
+          <Key>
+            <PropertyRef Name="cod_maquina" />
+          </Key>
+          <Property Name="cod_maquina" Type="int" Nullable="false" />
+          <Property Name="nombre_maquina" Type="varchar" MaxLength="15" />
+          <Property Name="nro_corrida_inicial" Type="int" />
+          <Property Name="nro_corrida_final" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Monedas">
+          <Key>
+            <PropertyRef Name="cod_moneda" />
+          </Key>
+          <Property Name="cod_moneda" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="descripcion" Type="varchar" MaxLength="20" />
+          <Property Name="decimales" Type="int" />
+        </EntityType>
+        <EntityType Name="Procesos">
+          <Key>
+            <PropertyRef Name="cod_proceso" />
+          </Key>
+          <Property Name="cod_proceso" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="cod_sucursal" />
+            <PropertyRef Name="cod_banco" />
+          </Key>
+          <Property Name="cod_sucursal" Type="int" Nullable="false" />
+          <Property Name="nombre_sucusal" Type="varchar" MaxLength="30" />
+          <Property Name="cod_banco" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'Clearing.dbo.TBUSUAR' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de sólo lectura.
+      -->
+        <EntityType Name="TBUSUAR">
+          <Key>
+            <PropertyRef Name="TUOPERA" />
+            <PropertyRef Name="TUACC01" />
+            <PropertyRef Name="TUACC02" />
+            <PropertyRef Name="TUACC03" />
+            <PropertyRef Name="TUACC04" />
+            <PropertyRef Name="TUACC05" />
+            <PropertyRef Name="TUACC06" />
+            <PropertyRef Name="TUACC07" />
+          </Key>
+          <Property Name="TUOPERA" Type="int" Nullable="false" />
+          <Property Name="TUNOMBR" Type="nvarchar" MaxLength="50" />
+          <Property Name="TUUSUAR" Type="nvarchar" MaxLength="15" />
+          <Property Name="TUPASSW" Type="nvarchar" MaxLength="15" />
+          <Property Name="TUACC01" Type="bit" Nullable="false" />
+          <Property Name="TUACC02" Type="bit" Nullable="false" />
+          <Property Name="TUACC03" Type="bit" Nullable="false" />
+          <Property Name="TUACC04" Type="bit" Nullable="false" />
+          <Property Name="TUACC05" Type="bit" Nullable="false" />
+          <Property Name="TUACC06" Type="bit" Nullable="false" />
+          <Property Name="TUACC07" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipo_Documentos">
+          <Key>
+            <PropertyRef Name="codTipoDocumento" />
+          </Key>
+          <Property Name="codTipoDocumento" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="cod_usuario" />
+          </Key>
+          <Property Name="cod_usuario" Type="int" Nullable="false" />
+          <Property Name="user" Type="char" MaxLength="10" />
+          <Property Name="nombre" Type="varchar" MaxLength="30" />
+          <Property Name="apellido" Type="varchar" MaxLength="30" />
+          <Property Name="cargo" Type="varchar" MaxLength="30" />
+          <Property Name="pasword" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <Association Name="Bancos_Cabeceras_FK1">
+          <End Role="Bancos" Type="ClearingModel.Store.Bancos" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="cod_banco" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="cod_banco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Bancos_Sucursales_FK1">
+          <End Role="Bancos" Type="ClearingModel.Store.Bancos" Multiplicity="1" />
+          <End Role="Sucursales" Type="ClearingModel.Store.Sucursales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="cod_banco" />
+            </Principal>
+            <Dependent Role="Sucursales">
+              <PropertyRef Name="cod_banco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cabeceras_Detalle_Cheques_FK1">
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="0..1" />
+          <End Role="Detalle_Cheques" Type="ClearingModel.Store.Detalle_Cheques" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cabeceras">
+              <PropertyRef Name="id_cabecera" />
+            </Principal>
+            <Dependent Role="Detalle_Cheques">
+              <PropertyRef Name="id_cabecera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Camara_Cabeceras_FK1">
+          <End Role="Camara" Type="ClearingModel.Store.Camara" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Camara">
+              <PropertyRef Name="cod_camara" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="cod_camara" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bancos_Estados">
+          <End Role="Estados" Type="ClearingModel.Store.Estados" Multiplicity="1" />
+          <End Role="Bancos" Type="ClearingModel.Store.Bancos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="cod_estado" />
+            </Principal>
+            <Dependent Role="Bancos">
+              <PropertyRef Name="estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Maquinas_Cabeceras_FK1">
+          <End Role="Maquinas" Type="ClearingModel.Store.Maquinas" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maquinas">
+              <PropertyRef Name="cod_maquina" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="cod_maquina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Monedas_Cabeceras_FK1">
+          <End Role="Monedas" Type="ClearingModel.Store.Monedas" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monedas">
+              <PropertyRef Name="cod_moneda" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="cod_moneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Procesos_Cabeceras_FK1">
+          <End Role="Procesos" Type="ClearingModel.Store.Procesos" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Procesos">
+              <PropertyRef Name="cod_proceso" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="cod_proceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tipo_Documentos_Cabeceras_FK1">
+          <End Role="Tipo_Documentos" Type="ClearingModel.Store.Tipo_Documentos" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Documentos">
+              <PropertyRef Name="codTipoDocumento" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="cod_tipo_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tipo_Documentos_Detalle_Cheques_FK1">
+          <End Role="Tipo_Documentos" Type="ClearingModel.Store.Tipo_Documentos" Multiplicity="0..1" />
+          <End Role="Detalle_Cheques" Type="ClearingModel.Store.Detalle_Cheques" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Documentos">
+              <PropertyRef Name="codTipoDocumento" />
+            </Principal>
+            <Dependent Role="Detalle_Cheques">
+              <PropertyRef Name="cod_tipo_documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usuarios_Cabeceras_FK1">
+          <End Role="Usuarios" Type="ClearingModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Store.Cabeceras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="cod_usuario" />
+            </Principal>
+            <Dependent Role="Cabeceras">
+              <PropertyRef Name="audit_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usuarios_Detalle_Cheques_FK1">
+          <End Role="Usuarios" Type="ClearingModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Detalle_Cheques" Type="ClearingModel.Store.Detalle_Cheques" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="cod_usuario" />
+            </Principal>
+            <Dependent Role="Detalle_Cheques">
+              <PropertyRef Name="audit_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DeleteBancos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_banco" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAllFromBancos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetBancosBycod_banco" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_banco" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertBancos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_banco" Type="int" Mode="In" />
+          <Parameter Name="estado" Type="char" Mode="In" />
+          <Parameter Name="nombre_banco" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateBancos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_banco" Type="int" Mode="In" />
+          <Parameter Name="estado" Type="char" Mode="In" />
+          <Parameter Name="nombre_banco" Type="varchar" Mode="In" />
+        </Function>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'Clearing.dbo.MaqEsclavas' no tiene una clave principal definida y no es posible inferir ninguna clave primaria válida. Esta tabla o vista se ha excluido. Para usar la entidad necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="MaqEsclavas">
+        <Property Name="NroMaquina" Type="int" />
+        <Property Name="DireccionEsclavo" Type="nvarchar" MaxLength="150" />
+        <Property Name="ImagenesEsclavo" Type="nvarchar" MaxLength="50" />
+      </EntityType>
+      Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'Clearing.dbo.PAQUETES' no tiene una clave principal definida y no es posible inferir ninguna clave primaria válida. Esta tabla o vista se ha excluido. Para usar la entidad necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="PAQUETES">
+        <Property Name="LOTE" Type="int" />
+        <Property Name="NroPaquete" Type="int" />
+        <Property Name="CCheques" Type="int" />
+        <Property Name="Monto" Type="float" />
+        <Property Name="Sucursal" Type="int" />
+      </EntityType>
+      Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'Clearing.dbo.Rechazos' no tiene una clave principal definida y no es posible inferir ninguna clave primaria válida. Esta tabla o vista se ha excluido. Para usar la entidad necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="Rechazos">
+        <Property Name="LOTE" Type="int" />
+        <Property Name="CAJERO" Type="nvarchar" MaxLength="50" />
+        <Property Name="SUCURSAL" Type="nvarchar" MaxLength="50" />
+        <Property Name="CUENTA" Type="nvarchar" MaxLength="50" />
+        <Property Name="BOLETA" Type="nvarchar" MaxLength="50" />
+        <Property Name="MONTO" Type="nvarchar" MaxLength="50" />
+        <Property Name="CUENTADEP" Type="nvarchar" MaxLength="50" />
+        <Property Name="BOLETADEP" Type="nvarchar" MaxLength="50" />
+      </EntityType>
+      Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'Clearing.dbo.TBRECHA' no tiene una clave principal definida y no es posible inferir ninguna clave primaria válida. Esta tabla o vista se ha excluido. Para usar la entidad necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="TBRECHA">
+        <Property Name="THRECHA" Type="float" />
+        <Property Name="THCDBCP" Type="float" />
+        <Property Name="THNOMBR" Type="nvarchar" MaxLength="30" />
+        <Property Name="THSIONO" Type="nvarchar" MaxLength="1" />
+        <Property Name="THRECIB" Type="float" />
+        <Property Name="THREVAL" Type="float" />
+        <Property Name="THENVIA" Type="float" />
+        <Property Name="THENVAL" Type="float" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClearingModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="ClearingEntities">
+          <EntitySet Name="Bancos" EntityType="ClearingModel.Bancos" />
+          <EntitySet Name="Cabeceras" EntityType="ClearingModel.Cabeceras" />
+          <EntitySet Name="Camara" EntityType="ClearingModel.Camara" />
+          <EntitySet Name="Configuracion" EntityType="ClearingModel.Configuracion" />
+          <EntitySet Name="Detalle_Cheques" EntityType="ClearingModel.Detalle_Cheques" />
+          <EntitySet Name="Estados" EntityType="ClearingModel.Estados" />
+          <EntitySet Name="Fin" EntityType="ClearingModel.Fin" />
+          <EntitySet Name="InterBco" EntityType="ClearingModel.InterBco" />
+          <EntitySet Name="Lecturas" EntityType="ClearingModel.Lecturas" />
+          <EntitySet Name="LecturasAnteriores" EntityType="ClearingModel.LecturasAnteriores" />
+          <EntitySet Name="LecturasBCP" EntityType="ClearingModel.LecturasBCP" />
+          <EntitySet Name="Maquinas" EntityType="ClearingModel.Maquinas" />
+          <EntitySet Name="Monedas" EntityType="ClearingModel.Monedas" />
+          <EntitySet Name="Procesos" EntityType="ClearingModel.Procesos" />
+          <EntitySet Name="Sucursales" EntityType="ClearingModel.Sucursales" />
+          <EntitySet Name="TBUSUAR" EntityType="ClearingModel.TBUSUAR" />
+          <EntitySet Name="Tipo_Documentos" EntityType="ClearingModel.Tipo_Documentos" />
+          <EntitySet Name="Usuarios" EntityType="ClearingModel.Usuarios" />
+          <AssociationSet Name="Bancos_Cabeceras_FK1" Association="ClearingModel.Bancos_Cabeceras_FK1">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Bancos_Sucursales_FK1" Association="ClearingModel.Bancos_Sucursales_FK1">
+            <End Role="Bancos" EntitySet="Bancos" />
+            <End Role="Sucursales" EntitySet="Sucursales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bancos_Estados" Association="ClearingModel.FK_Bancos_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Bancos" EntitySet="Bancos" />
+          </AssociationSet>
+          <AssociationSet Name="Cabeceras_Detalle_Cheques_FK1" Association="ClearingModel.Cabeceras_Detalle_Cheques_FK1">
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+            <End Role="Detalle_Cheques" EntitySet="Detalle_Cheques" />
+          </AssociationSet>
+          <AssociationSet Name="Camara_Cabeceras_FK1" Association="ClearingModel.Camara_Cabeceras_FK1">
+            <End Role="Camara" EntitySet="Camara" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Maquinas_Cabeceras_FK1" Association="ClearingModel.Maquinas_Cabeceras_FK1">
+            <End Role="Maquinas" EntitySet="Maquinas" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Monedas_Cabeceras_FK1" Association="ClearingModel.Monedas_Cabeceras_FK1">
+            <End Role="Monedas" EntitySet="Monedas" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Procesos_Cabeceras_FK1" Association="ClearingModel.Procesos_Cabeceras_FK1">
+            <End Role="Procesos" EntitySet="Procesos" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Tipo_Documentos_Cabeceras_FK1" Association="ClearingModel.Tipo_Documentos_Cabeceras_FK1">
+            <End Role="Tipo_Documentos" EntitySet="Tipo_Documentos" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Usuarios_Cabeceras_FK1" Association="ClearingModel.Usuarios_Cabeceras_FK1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Cabeceras" EntitySet="Cabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="Tipo_Documentos_Detalle_Cheques_FK1" Association="ClearingModel.Tipo_Documentos_Detalle_Cheques_FK1">
+            <End Role="Tipo_Documentos" EntitySet="Tipo_Documentos" />
+            <End Role="Detalle_Cheques" EntitySet="Detalle_Cheques" />
+          </AssociationSet>
+          <AssociationSet Name="Usuarios_Detalle_Cheques_FK1" Association="ClearingModel.Usuarios_Detalle_Cheques_FK1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Detalle_Cheques" EntitySet="Detalle_Cheques" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bancos">
+          <Key>
+            <PropertyRef Name="cod_banco" />
+          </Key>
+          <Property Name="cod_banco" Type="Int32" Nullable="false" />
+          <Property Name="nombre_banco" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Bancos_Cabeceras_FK1" FromRole="Bancos" ToRole="Cabeceras" />
+          <NavigationProperty Name="Sucursales" Relationship="ClearingModel.Bancos_Sucursales_FK1" FromRole="Bancos" ToRole="Sucursales" />
+          <NavigationProperty Name="Estados" Relationship="ClearingModel.FK_Bancos_Estados" FromRole="Bancos" ToRole="Estados" />
+        </EntityType>
+        <EntityType Name="Cabeceras">
+          <Key>
+            <PropertyRef Name="id_cabecera" />
+          </Key>
+          <Property Name="id_cabecera" Type="Int32" Nullable="false" />
+          <Property Name="nro_lote" Type="Int32" Nullable="false" />
+          <Property Name="cod_banco_receptor" Type="Int32" />
+          <Property Name="cuenta_deposito" Type="Int32" />
+          <Property Name="monto_total" Type="Int32" />
+          <Property Name="cod_sucursal" Type="Int32" />
+          <Property Name="imagen_frontal" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="nro_corrida" Type="Int32" />
+          <Property Name="nro_bolsillo" Type="Int32" />
+          <Property Name="cadena_captura" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_lectura" Type="DateTime" />
+          <Property Name="audit_fecha" Type="DateTime" />
+          <NavigationProperty Name="Bancos" Relationship="ClearingModel.Bancos_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Bancos" />
+          <NavigationProperty Name="Detalle_Cheques" Relationship="ClearingModel.Cabeceras_Detalle_Cheques_FK1" FromRole="Cabeceras" ToRole="Detalle_Cheques" />
+          <NavigationProperty Name="Camara" Relationship="ClearingModel.Camara_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Camara" />
+          <NavigationProperty Name="Maquinas" Relationship="ClearingModel.Maquinas_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Maquinas" />
+          <NavigationProperty Name="Monedas" Relationship="ClearingModel.Monedas_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Monedas" />
+          <NavigationProperty Name="Procesos" Relationship="ClearingModel.Procesos_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Procesos" />
+          <NavigationProperty Name="Tipo_Documentos" Relationship="ClearingModel.Tipo_Documentos_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Tipo_Documentos" />
+          <NavigationProperty Name="Usuarios" Relationship="ClearingModel.Usuarios_Cabeceras_FK1" FromRole="Cabeceras" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Camara">
+          <Key>
+            <PropertyRef Name="cod_camara" />
+          </Key>
+          <Property Name="cod_camara" Type="Int32" Nullable="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Camara_Cabeceras_FK1" FromRole="Camara" ToRole="Cabeceras" />
+        </EntityType>
+        <EntityType Name="Configuracion">
+          <Key>
+            <PropertyRef Name="UtilizarConfiguracion" />
+          </Key>
+          <Property Name="Sucursal" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Operacion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Filtrado" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NomMAYORES" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NomCMAYORES" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DestinoMAYORES" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="NomASCII" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NomCASCII" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DestinoASCII" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="NomDBF" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NomCDBF" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DestinoDBF" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="UtilizarConfiguracion" Type="Boolean" Nullable="false" />
+          <Property Name="DirectorioBackup" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Detalle_Cheques">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="Int32" Nullable="false" />
+          <Property Name="cod_banco_emisor" Type="Int32" />
+          <Property Name="numero_cheque" Type="Int32" />
+          <Property Name="numero_cuenta_librador" Type="Int32" />
+          <Property Name="cod_banco_receptor" Type="Int32" />
+          <Property Name="monto_cheque" Type="Int32" />
+          <Property Name="imagen_frontal_ch" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="imagen_reverso_ch" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="nro_corrida" Type="Int32" />
+          <Property Name="nro_bolsillo" Type="Int32" />
+          <Property Name="cadena_captura" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="audit_fecha" Type="DateTime" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Cabeceras_Detalle_Cheques_FK1" FromRole="Detalle_Cheques" ToRole="Cabeceras" />
+          <NavigationProperty Name="Tipo_Documentos" Relationship="ClearingModel.Tipo_Documentos_Detalle_Cheques_FK1" FromRole="Detalle_Cheques" ToRole="Tipo_Documentos" />
+          <NavigationProperty Name="Usuarios" Relationship="ClearingModel.Usuarios_Detalle_Cheques_FK1" FromRole="Detalle_Cheques" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="cod_estado" />
+          </Key>
+          <Property Name="cod_estado" Type="Int32" Nullable="false" />
+          <Property Name="nombre_estado" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="tabla" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Bancos" Relationship="ClearingModel.FK_Bancos_Estados" FromRole="Estados" ToRole="Bancos" />
+        </EntityType>
+        <EntityType Name="Fin">
+          <Key>
+            <PropertyRef Name="Finalizado" />
+          </Key>
+          <Property Name="Finalizado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InterBco">
+          <Key>
+            <PropertyRef Name="EXISTE" />
+          </Key>
+          <Property Name="LOTE" Type="Int32" />
+          <Property Name="CAJERO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SUCURSAL" Type="Int32" />
+          <Property Name="SECUENCIA" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="FECHA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CUENTA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BOLETA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MONTO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CANTCHEQUES" Type="Int32" />
+          <Property Name="EXISTE" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lecturas">
+          <Key>
+            <PropertyRef Name="VERIFICADO" />
+            <PropertyRef Name="IB_MONTO" />
+            <PropertyRef Name="CORREGIDO" />
+            <PropertyRef Name="ENVIADO" />
+            <PropertyRef Name="MANO" />
+            <PropertyRef Name="Ingreso" />
+          </Key>
+          <Property Name="LOTE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="HORA" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="CL_BANCO" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+          <Property Name="CL_DOC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_CTA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_SER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_BCORE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_CAM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_MONTO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageFront" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageBack" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CABECERA" Type="Int32" />
+          <Property Name="FECHA" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="VERIFICADO" Type="Boolean" Nullable="false" />
+          <Property Name="IB_SER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IB_MONTO" Type="Boolean" Nullable="false" />
+          <Property Name="CORREGIDO" Type="Boolean" Nullable="false" />
+          <Property Name="REC0" Type="Int32" />
+          <Property Name="REC1" Type="Int32" />
+          <Property Name="REC2" Type="Int32" />
+          <Property Name="REC3" Type="Int32" />
+          <Property Name="REC4" Type="Int32" />
+          <Property Name="REC5" Type="Int32" />
+          <Property Name="REC6" Type="Int32" />
+          <Property Name="REC7" Type="Int32" />
+          <Property Name="USUARIO" Type="Int32" />
+          <Property Name="PAQUETE" Type="Int32" />
+          <Property Name="ENVIADO" Type="Boolean" Nullable="false" />
+          <Property Name="MANO" Type="Boolean" Nullable="false" />
+          <Property Name="Ingreso" Type="Int32" Nullable="false" />
+          <Property Name="log" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CTA_DEP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LecturasAnteriores">
+          <Key>
+            <PropertyRef Name="ENVIADO" />
+            <PropertyRef Name="MANO" />
+          </Key>
+          <Property Name="LOTE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="HORA" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="CL_BANCO" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+          <Property Name="CL_DOC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_CTA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_SER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_BCORE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_CAM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_MONTO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageFront" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageBack" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CABECERA" Type="Int32" />
+          <Property Name="FECHA" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="REC0" Type="Int32" />
+          <Property Name="REC1" Type="Int32" />
+          <Property Name="REC2" Type="Int32" />
+          <Property Name="REC3" Type="Int32" />
+          <Property Name="REC4" Type="Int32" />
+          <Property Name="REC5" Type="Int32" />
+          <Property Name="REC6" Type="Int32" />
+          <Property Name="REC7" Type="Int32" />
+          <Property Name="USUARIO" Type="Int32" />
+          <Property Name="PAQUETE" Type="Int32" />
+          <Property Name="ENVIADO" Type="Boolean" Nullable="false" />
+          <Property Name="MANO" Type="Boolean" Nullable="false" />
+          <Property Name="INGRESO" Type="Int32" />
+          <Property Name="Log" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="CTA_DEP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LecturasBCP">
+          <Key>
+            <PropertyRef Name="VERIFICADO" />
+            <PropertyRef Name="IB_MONTO" />
+            <PropertyRef Name="CORREGIDO" />
+            <PropertyRef Name="ENVIADO" />
+            <PropertyRef Name="MANO" />
+          </Key>
+          <Property Name="LOTE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="HORA" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="CL_BANCO" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+          <Property Name="CL_DOC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_CTA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_SER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_BCORE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_CAM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CL_MONTO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageFront" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageBack" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CABECERA" Type="Int32" />
+          <Property Name="FECHA" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="VERIFICADO" Type="Boolean" Nullable="false" />
+          <Property Name="IB_SER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IB_MONTO" Type="Boolean" Nullable="false" />
+          <Property Name="CORREGIDO" Type="Boolean" Nullable="false" />
+          <Property Name="SECUENCIA" Type="Int32" />
+          <Property Name="USUARIO" Type="Int32" />
+          <Property Name="PAQUETE" Type="Int32" />
+          <Property Name="ENVIADO" Type="Boolean" Nullable="false" />
+          <Property Name="MANO" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maquinas">
+          <Key>
+            <PropertyRef Name="cod_maquina" />
+          </Key>
+          <Property Name="cod_maquina" Type="Int32" Nullable="false" />
+          <Property Name="nombre_maquina" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="nro_corrida_inicial" Type="Int32" />
+          <Property Name="nro_corrida_final" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Maquinas_Cabeceras_FK1" FromRole="Maquinas" ToRole="Cabeceras" />
+        </EntityType>
+        <EntityType Name="Monedas">
+          <Key>
+            <PropertyRef Name="cod_moneda" />
+          </Key>
+          <Property Name="cod_moneda" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="descripcion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="decimales" Type="Int32" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Monedas_Cabeceras_FK1" FromRole="Monedas" ToRole="Cabeceras" />
+        </EntityType>
+        <EntityType Name="Procesos">
+          <Key>
+            <PropertyRef Name="cod_proceso" />
+          </Key>
+          <Property Name="cod_proceso" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Procesos_Cabeceras_FK1" FromRole="Procesos" ToRole="Cabeceras" />
+        </EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="cod_sucursal" />
+            <PropertyRef Name="cod_banco" />
+          </Key>
+          <Property Name="cod_sucursal" Type="Int32" Nullable="false" />
+          <Property Name="nombre_sucusal" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="cod_banco" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bancos" Relationship="ClearingModel.Bancos_Sucursales_FK1" FromRole="Sucursales" ToRole="Bancos" />
+        </EntityType>
+        <EntityType Name="TBUSUAR">
+          <Key>
+            <PropertyRef Name="TUOPERA" />
+            <PropertyRef Name="TUACC01" />
+            <PropertyRef Name="TUACC02" />
+            <PropertyRef Name="TUACC03" />
+            <PropertyRef Name="TUACC04" />
+            <PropertyRef Name="TUACC05" />
+            <PropertyRef Name="TUACC06" />
+            <PropertyRef Name="TUACC07" />
+          </Key>
+          <Property Name="TUOPERA" Type="Int32" Nullable="false" />
+          <Property Name="TUNOMBR" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TUUSUAR" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="TUPASSW" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="TUACC01" Type="Boolean" Nullable="false" />
+          <Property Name="TUACC02" Type="Boolean" Nullable="false" />
+          <Property Name="TUACC03" Type="Boolean" Nullable="false" />
+          <Property Name="TUACC04" Type="Boolean" Nullable="false" />
+          <Property Name="TUACC05" Type="Boolean" Nullable="false" />
+          <Property Name="TUACC06" Type="Boolean" Nullable="false" />
+          <Property Name="TUACC07" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipo_Documentos">
+          <Key>
+            <PropertyRef Name="codTipoDocumento" />
+          </Key>
+          <Property Name="codTipoDocumento" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Tipo_Documentos_Cabeceras_FK1" FromRole="Tipo_Documentos" ToRole="Cabeceras" />
+          <NavigationProperty Name="Detalle_Cheques" Relationship="ClearingModel.Tipo_Documentos_Detalle_Cheques_FK1" FromRole="Tipo_Documentos" ToRole="Detalle_Cheques" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="cod_usuario" />
+          </Key>
+          <Property Name="cod_usuario" Type="Int32" Nullable="false" />
+          <Property Name="user" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="nombre" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="apellido" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="cargo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="pasword" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cabeceras" Relationship="ClearingModel.Usuarios_Cabeceras_FK1" FromRole="Usuarios" ToRole="Cabeceras" />
+          <NavigationProperty Name="Detalle_Cheques" Relationship="ClearingModel.Usuarios_Detalle_Cheques_FK1" FromRole="Usuarios" ToRole="Detalle_Cheques" />
+        </EntityType>
+        <Association Name="Bancos_Cabeceras_FK1">
+          <End Role="Bancos" Type="ClearingModel.Bancos" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Bancos_Sucursales_FK1">
+          <End Role="Bancos" Type="ClearingModel.Bancos" Multiplicity="1" />
+          <End Role="Sucursales" Type="ClearingModel.Sucursales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bancos">
+              <PropertyRef Name="cod_banco" />
+            </Principal>
+            <Dependent Role="Sucursales">
+              <PropertyRef Name="cod_banco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bancos_Estados">
+          <End Role="Estados" Type="ClearingModel.Estados" Multiplicity="1" />
+          <End Role="Bancos" Type="ClearingModel.Bancos" Multiplicity="*" />
+        </Association>
+        <Association Name="Cabeceras_Detalle_Cheques_FK1">
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="0..1" />
+          <End Role="Detalle_Cheques" Type="ClearingModel.Detalle_Cheques" Multiplicity="*" />
+        </Association>
+        <Association Name="Camara_Cabeceras_FK1">
+          <End Role="Camara" Type="ClearingModel.Camara" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Maquinas_Cabeceras_FK1">
+          <End Role="Maquinas" Type="ClearingModel.Maquinas" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Monedas_Cabeceras_FK1">
+          <End Role="Monedas" Type="ClearingModel.Monedas" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Procesos_Cabeceras_FK1">
+          <End Role="Procesos" Type="ClearingModel.Procesos" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Tipo_Documentos_Cabeceras_FK1">
+          <End Role="Tipo_Documentos" Type="ClearingModel.Tipo_Documentos" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Usuarios_Cabeceras_FK1">
+          <End Role="Usuarios" Type="ClearingModel.Usuarios" Multiplicity="0..1" />
+          <End Role="Cabeceras" Type="ClearingModel.Cabeceras" Multiplicity="*" />
+        </Association>
+        <Association Name="Tipo_Documentos_Detalle_Cheques_FK1">
+          <End Role="Tipo_Documentos" Type="ClearingModel.Tipo_Documentos" Multiplicity="0..1" />
+          <End Role="Detalle_Cheques" Type="ClearingModel.Detalle_Cheques" Multiplicity="*" />
+        </Association>
+        <Association Name="Usuarios_Detalle_Cheques_FK1">
+          <End Role="Usuarios" Type="ClearingModel.Usuarios" Multiplicity="0..1" />
+          <End Role="Detalle_Cheques" Type="ClearingModel.Detalle_Cheques" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="ClearingModelStoreContainer" CdmEntityContainer="ClearingEntities">
+          <EntitySetMapping Name="Bancos">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Bancos)">
+              <MappingFragment StoreEntitySet="Bancos">
+                <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+                <ScalarProperty Name="nombre_banco" ColumnName="nombre_banco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cabeceras">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Cabeceras)">
+              <MappingFragment StoreEntitySet="Cabeceras">
+                <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+                <ScalarProperty Name="nro_lote" ColumnName="nro_lote" />
+                <ScalarProperty Name="cod_banco_receptor" ColumnName="cod_banco_receptor" />
+                <ScalarProperty Name="cuenta_deposito" ColumnName="cuenta_deposito" />
+                <ScalarProperty Name="monto_total" ColumnName="monto_total" />
+                <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+                <ScalarProperty Name="imagen_frontal" ColumnName="imagen_frontal" />
+                <ScalarProperty Name="nro_corrida" ColumnName="nro_corrida" />
+                <ScalarProperty Name="nro_bolsillo" ColumnName="nro_bolsillo" />
+                <ScalarProperty Name="cadena_captura" ColumnName="cadena_captura" />
+                <ScalarProperty Name="fecha_lectura" ColumnName="fecha_lectura" />
+                <ScalarProperty Name="audit_fecha" ColumnName="audit_fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Camara">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Camara)">
+              <MappingFragment StoreEntitySet="Camara">
+                <ScalarProperty Name="cod_camara" ColumnName="cod_camara" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Configuracion">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Configuracion)">
+              <MappingFragment StoreEntitySet="Configuracion">
+                <ScalarProperty Name="Sucursal" ColumnName="Sucursal" />
+                <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+                <ScalarProperty Name="Filtrado" ColumnName="Filtrado" />
+                <ScalarProperty Name="NomMAYORES" ColumnName="NomMAYORES" />
+                <ScalarProperty Name="NomCMAYORES" ColumnName="NomCMAYORES" />
+                <ScalarProperty Name="DestinoMAYORES" ColumnName="DestinoMAYORES" />
+                <ScalarProperty Name="NomASCII" ColumnName="NomASCII" />
+                <ScalarProperty Name="NomCASCII" ColumnName="NomCASCII" />
+                <ScalarProperty Name="DestinoASCII" ColumnName="DestinoASCII" />
+                <ScalarProperty Name="NomDBF" ColumnName="NomDBF" />
+                <ScalarProperty Name="NomCDBF" ColumnName="NomCDBF" />
+                <ScalarProperty Name="DestinoDBF" ColumnName="DestinoDBF" />
+                <ScalarProperty Name="UtilizarConfiguracion" ColumnName="UtilizarConfiguracion" />
+                <ScalarProperty Name="DirectorioBackup" ColumnName="DirectorioBackup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detalle_Cheques">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Detalle_Cheques)">
+              <MappingFragment StoreEntitySet="Detalle_Cheques">
+                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+                <ScalarProperty Name="cod_banco_emisor" ColumnName="cod_banco_emisor" />
+                <ScalarProperty Name="numero_cheque" ColumnName="numero_cheque" />
+                <ScalarProperty Name="numero_cuenta_librador" ColumnName="numero_cuenta_librador" />
+                <ScalarProperty Name="cod_banco_receptor" ColumnName="cod_banco_receptor" />
+                <ScalarProperty Name="monto_cheque" ColumnName="monto_cheque" />
+                <ScalarProperty Name="imagen_frontal_ch" ColumnName="imagen_frontal_ch" />
+                <ScalarProperty Name="imagen_reverso_ch" ColumnName="imagen_reverso_ch" />
+                <ScalarProperty Name="nro_corrida" ColumnName="nro_corrida" />
+                <ScalarProperty Name="nro_bolsillo" ColumnName="nro_bolsillo" />
+                <ScalarProperty Name="cadena_captura" ColumnName="cadena_captura" />
+                <ScalarProperty Name="audit_fecha" ColumnName="audit_fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Estados)">
+              <MappingFragment StoreEntitySet="Estados">
+                <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
+                <ScalarProperty Name="nombre_estado" ColumnName="nombre_estado" />
+                <ScalarProperty Name="tabla" ColumnName="tabla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fin">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Fin)">
+              <MappingFragment StoreEntitySet="Fin">
+                <ScalarProperty Name="Finalizado" ColumnName="Finalizado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InterBco">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.InterBco)">
+              <MappingFragment StoreEntitySet="InterBco">
+                <ScalarProperty Name="LOTE" ColumnName="LOTE" />
+                <ScalarProperty Name="CAJERO" ColumnName="CAJERO" />
+                <ScalarProperty Name="SUCURSAL" ColumnName="SUCURSAL" />
+                <ScalarProperty Name="SECUENCIA" ColumnName="SECUENCIA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="CUENTA" ColumnName="CUENTA" />
+                <ScalarProperty Name="BOLETA" ColumnName="BOLETA" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="CANTCHEQUES" ColumnName="CANTCHEQUES" />
+                <ScalarProperty Name="EXISTE" ColumnName="EXISTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lecturas">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Lecturas)">
+              <MappingFragment StoreEntitySet="Lecturas">
+                <ScalarProperty Name="LOTE" ColumnName="LOTE" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="CL_BANCO" ColumnName="CL_BANCO" />
+                <ScalarProperty Name="CL_DOC" ColumnName="CL_DOC" />
+                <ScalarProperty Name="CL_CTA" ColumnName="CL_CTA" />
+                <ScalarProperty Name="CL_SER" ColumnName="CL_SER" />
+                <ScalarProperty Name="CL_BCORE" ColumnName="CL_BCORE" />
+                <ScalarProperty Name="CL_CAM" ColumnName="CL_CAM" />
+                <ScalarProperty Name="CL_MONTO" ColumnName="CL_MONTO" />
+                <ScalarProperty Name="ImageFront" ColumnName="ImageFront" />
+                <ScalarProperty Name="ImageBack" ColumnName="ImageBack" />
+                <ScalarProperty Name="CABECERA" ColumnName="CABECERA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="VERIFICADO" ColumnName="VERIFICADO" />
+                <ScalarProperty Name="IB_SER" ColumnName="IB_SER" />
+                <ScalarProperty Name="IB_MONTO" ColumnName="IB_MONTO" />
+                <ScalarProperty Name="CORREGIDO" ColumnName="CORREGIDO" />
+                <ScalarProperty Name="REC0" ColumnName="REC0" />
+                <ScalarProperty Name="REC1" ColumnName="REC1" />
+                <ScalarProperty Name="REC2" ColumnName="REC2" />
+                <ScalarProperty Name="REC3" ColumnName="REC3" />
+                <ScalarProperty Name="REC4" ColumnName="REC4" />
+                <ScalarProperty Name="REC5" ColumnName="REC5" />
+                <ScalarProperty Name="REC6" ColumnName="REC6" />
+                <ScalarProperty Name="REC7" ColumnName="REC7" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="PAQUETE" ColumnName="PAQUETE" />
+                <ScalarProperty Name="ENVIADO" ColumnName="ENVIADO" />
+                <ScalarProperty Name="MANO" ColumnName="MANO" />
+                <ScalarProperty Name="Ingreso" ColumnName="Ingreso" />
+                <ScalarProperty Name="log" ColumnName="log" />
+                <ScalarProperty Name="CTA_DEP" ColumnName="CTA_DEP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LecturasAnteriores">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.LecturasAnteriores)">
+              <MappingFragment StoreEntitySet="LecturasAnteriores">
+                <ScalarProperty Name="LOTE" ColumnName="LOTE" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="CL_BANCO" ColumnName="CL_BANCO" />
+                <ScalarProperty Name="CL_DOC" ColumnName="CL_DOC" />
+                <ScalarProperty Name="CL_CTA" ColumnName="CL_CTA" />
+                <ScalarProperty Name="CL_SER" ColumnName="CL_SER" />
+                <ScalarProperty Name="CL_BCORE" ColumnName="CL_BCORE" />
+                <ScalarProperty Name="CL_CAM" ColumnName="CL_CAM" />
+                <ScalarProperty Name="CL_MONTO" ColumnName="CL_MONTO" />
+                <ScalarProperty Name="ImageFront" ColumnName="ImageFront" />
+                <ScalarProperty Name="ImageBack" ColumnName="ImageBack" />
+                <ScalarProperty Name="CABECERA" ColumnName="CABECERA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="REC0" ColumnName="REC0" />
+                <ScalarProperty Name="REC1" ColumnName="REC1" />
+                <ScalarProperty Name="REC2" ColumnName="REC2" />
+                <ScalarProperty Name="REC3" ColumnName="REC3" />
+                <ScalarProperty Name="REC4" ColumnName="REC4" />
+                <ScalarProperty Name="REC5" ColumnName="REC5" />
+                <ScalarProperty Name="REC6" ColumnName="REC6" />
+                <ScalarProperty Name="REC7" ColumnName="REC7" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="PAQUETE" ColumnName="PAQUETE" />
+                <ScalarProperty Name="ENVIADO" ColumnName="ENVIADO" />
+                <ScalarProperty Name="MANO" ColumnName="MANO" />
+                <ScalarProperty Name="INGRESO" ColumnName="INGRESO" />
+                <ScalarProperty Name="Log" ColumnName="Log" />
+                <ScalarProperty Name="CTA_DEP" ColumnName="CTA_DEP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LecturasBCP">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.LecturasBCP)">
+              <MappingFragment StoreEntitySet="LecturasBCP">
+                <ScalarProperty Name="LOTE" ColumnName="LOTE" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="CL_BANCO" ColumnName="CL_BANCO" />
+                <ScalarProperty Name="CL_DOC" ColumnName="CL_DOC" />
+                <ScalarProperty Name="CL_CTA" ColumnName="CL_CTA" />
+                <ScalarProperty Name="CL_SER" ColumnName="CL_SER" />
+                <ScalarProperty Name="CL_BCORE" ColumnName="CL_BCORE" />
+                <ScalarProperty Name="CL_CAM" ColumnName="CL_CAM" />
+                <ScalarProperty Name="CL_MONTO" ColumnName="CL_MONTO" />
+                <ScalarProperty Name="ImageFront" ColumnName="ImageFront" />
+                <ScalarProperty Name="ImageBack" ColumnName="ImageBack" />
+                <ScalarProperty Name="CABECERA" ColumnName="CABECERA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="VERIFICADO" ColumnName="VERIFICADO" />
+                <ScalarProperty Name="IB_SER" ColumnName="IB_SER" />
+                <ScalarProperty Name="IB_MONTO" ColumnName="IB_MONTO" />
+                <ScalarProperty Name="CORREGIDO" ColumnName="CORREGIDO" />
+                <ScalarProperty Name="SECUENCIA" ColumnName="SECUENCIA" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="PAQUETE" ColumnName="PAQUETE" />
+                <ScalarProperty Name="ENVIADO" ColumnName="ENVIADO" />
+                <ScalarProperty Name="MANO" ColumnName="MANO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maquinas">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Maquinas)">
+              <MappingFragment StoreEntitySet="Maquinas">
+                <ScalarProperty Name="cod_maquina" ColumnName="cod_maquina" />
+                <ScalarProperty Name="nombre_maquina" ColumnName="nombre_maquina" />
+                <ScalarProperty Name="nro_corrida_inicial" ColumnName="nro_corrida_inicial" />
+                <ScalarProperty Name="nro_corrida_final" ColumnName="nro_corrida_final" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monedas">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Monedas)">
+              <MappingFragment StoreEntitySet="Monedas">
+                <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="decimales" ColumnName="decimales" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Procesos">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Procesos)">
+              <MappingFragment StoreEntitySet="Procesos">
+                <ScalarProperty Name="cod_proceso" ColumnName="cod_proceso" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sucursales">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Sucursales)">
+              <MappingFragment StoreEntitySet="Sucursales">
+                <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+                <ScalarProperty Name="nombre_sucusal" ColumnName="nombre_sucusal" />
+                <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBUSUAR">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.TBUSUAR)">
+              <MappingFragment StoreEntitySet="TBUSUAR">
+                <ScalarProperty Name="TUOPERA" ColumnName="TUOPERA" />
+                <ScalarProperty Name="TUNOMBR" ColumnName="TUNOMBR" />
+                <ScalarProperty Name="TUUSUAR" ColumnName="TUUSUAR" />
+                <ScalarProperty Name="TUPASSW" ColumnName="TUPASSW" />
+                <ScalarProperty Name="TUACC01" ColumnName="TUACC01" />
+                <ScalarProperty Name="TUACC02" ColumnName="TUACC02" />
+                <ScalarProperty Name="TUACC03" ColumnName="TUACC03" />
+                <ScalarProperty Name="TUACC04" ColumnName="TUACC04" />
+                <ScalarProperty Name="TUACC05" ColumnName="TUACC05" />
+                <ScalarProperty Name="TUACC06" ColumnName="TUACC06" />
+                <ScalarProperty Name="TUACC07" ColumnName="TUACC07" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Documentos">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Tipo_Documentos)">
+              <MappingFragment StoreEntitySet="Tipo_Documentos">
+                <ScalarProperty Name="codTipoDocumento" ColumnName="codTipoDocumento" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="IsTypeOf(ClearingModel.Usuarios)">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="cod_usuario" ColumnName="cod_usuario" />
+                <ScalarProperty Name="user" ColumnName="user" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="pasword" ColumnName="pasword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Bancos_Cabeceras_FK1" TypeName="ClearingModel.Bancos_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Bancos">
+              <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="cod_banco" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Bancos_Sucursales_FK1" TypeName="ClearingModel.Bancos_Sucursales_FK1" StoreEntitySet="Sucursales">
+            <EndProperty Name="Bancos">
+              <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+            </EndProperty>
+            <EndProperty Name="Sucursales">
+              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+              <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Bancos_Estados" TypeName="ClearingModel.FK_Bancos_Estados" StoreEntitySet="Bancos">
+            <EndProperty Name="Estados">
+              <ScalarProperty Name="cod_estado" ColumnName="estado" />
+            </EndProperty>
+            <EndProperty Name="Bancos">
+              <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Cabeceras_Detalle_Cheques_FK1" TypeName="ClearingModel.Cabeceras_Detalle_Cheques_FK1" StoreEntitySet="Detalle_Cheques">
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <EndProperty Name="Detalle_Cheques">
+              <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+            </EndProperty>
+            <Condition ColumnName="id_cabecera" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Camara_Cabeceras_FK1" TypeName="ClearingModel.Camara_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Camara">
+              <ScalarProperty Name="cod_camara" ColumnName="cod_camara" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="cod_camara" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Maquinas_Cabeceras_FK1" TypeName="ClearingModel.Maquinas_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Maquinas">
+              <ScalarProperty Name="cod_maquina" ColumnName="cod_maquina" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="cod_maquina" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Monedas_Cabeceras_FK1" TypeName="ClearingModel.Monedas_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Monedas">
+              <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="cod_moneda" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Procesos_Cabeceras_FK1" TypeName="ClearingModel.Procesos_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Procesos">
+              <ScalarProperty Name="cod_proceso" ColumnName="cod_proceso" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="cod_proceso" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Tipo_Documentos_Cabeceras_FK1" TypeName="ClearingModel.Tipo_Documentos_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Tipo_Documentos">
+              <ScalarProperty Name="codTipoDocumento" ColumnName="cod_tipo_documento" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="cod_tipo_documento" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Usuarios_Cabeceras_FK1" TypeName="ClearingModel.Usuarios_Cabeceras_FK1" StoreEntitySet="Cabeceras">
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="cod_usuario" ColumnName="audit_usuario" />
+            </EndProperty>
+            <EndProperty Name="Cabeceras">
+              <ScalarProperty Name="id_cabecera" ColumnName="id_cabecera" />
+            </EndProperty>
+            <Condition ColumnName="audit_usuario" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Tipo_Documentos_Detalle_Cheques_FK1" TypeName="ClearingModel.Tipo_Documentos_Detalle_Cheques_FK1" StoreEntitySet="Detalle_Cheques">
+            <EndProperty Name="Tipo_Documentos">
+              <ScalarProperty Name="codTipoDocumento" ColumnName="cod_tipo_documento" />
+            </EndProperty>
+            <EndProperty Name="Detalle_Cheques">
+              <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+            </EndProperty>
+            <Condition ColumnName="cod_tipo_documento" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Usuarios_Detalle_Cheques_FK1" TypeName="ClearingModel.Usuarios_Detalle_Cheques_FK1" StoreEntitySet="Detalle_Cheques">
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="cod_usuario" ColumnName="audit_usuario" />
+            </EndProperty>
+            <EndProperty Name="Detalle_Cheques">
+              <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+            </EndProperty>
+            <Condition ColumnName="audit_usuario" IsNull="false" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ClearingModel" ZoomLevel="100" DisplayType="false">
+        <EntityTypeShape EntityType="ClearingModel.Bancos" Width="1.5" PointX="0.75" PointY="13.125" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Cabeceras" Width="1.5" PointX="3" PointY="1.125" Height="4.8648079427083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Camara" Width="1.5" PointX="0.75" PointY="5.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Configuracion" Width="1.5" PointX="2.75" PointY="6.75" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Detalle_Cheques" Width="1.5" PointX="5.25" PointY="1.5" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Estados" Width="1.5" PointX="1.5" PointY="16.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Fin" Width="1.5" PointX="4.75" PointY="6.75" Height="1.2110807291666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.InterBco" Width="1.5" PointX="6.75" PointY="6.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Lecturas" Width="1.5" PointX="8.75" PointY="0.75" Height="7.1724251302083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.LecturasAnteriores" Width="1.5" PointX="8.75" PointY="8.75" Height="6.4032194010416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.LecturasBCP" Width="1.5" PointX="10.75" PointY="0.75" Height="5.2494108072916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Maquinas" Width="1.5" PointX="0.75" PointY="18.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Monedas" Width="1.5" PointX="0.75" PointY="10.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Procesos" Width="1.5" PointX="0.75" PointY="8.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Sucursales" Width="1.5" PointX="3" PointY="13.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.TBUSUAR" Width="1.5" PointX="5.75" PointY="10.75" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Tipo_Documentos" Width="1.5" PointX="0.75" PointY="2.625" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearingModel.Usuarios" Width="1.5" PointX="0.75" PointY="21.5" Height="2.5571907552083317" IsExpanded="true" />
+        <AssociationConnector Association="ClearingModel.Bancos_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.125" />
+          <ConnectorPoint PointX="1.5" PointY="12.537985026041667" />
+          <ConnectorPoint PointX="2.5" PointY="12.537985026041667" />
+          <ConnectorPoint PointX="2.5" PointY="3.5574039713541659" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="3.5574039713541654" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="3.5574039713541659" />
+          <ConnectorPoint PointX="3" PointY="3.5574039713541659" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Bancos_Sucursales_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.018992513020834" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="14.018992513020832" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="14.018992513020834" />
+          <ConnectorPoint PointX="3" PointY="14.018992513020834" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.FK_Bancos_Estados" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.875" PointY="16.125" />
+          <ConnectorPoint PointX="1.875" PointY="15.105286458333332" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Cabeceras_Detalle_Cheques_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="3.451650390625" />
+          <ConnectorPoint PointX="5.25" PointY="3.451650390625" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Camara_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.3386544713541664" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="6.3386544713541655" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.3386544713541664" />
+          <ConnectorPoint PointX="3.5729134166666667" PointY="6.3386544713541655" />
+          <ConnectorPoint PointX="3.7395800833333337" PointY="6.3386544713541664" />
+          <ConnectorPoint PointX="4.40625" PointY="6.3386544713541664" />
+          <ConnectorPoint PointX="4.40625" PointY="5.9898079427083317" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Maquinas_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="18.75" />
+          <ConnectorPoint PointX="1.5" PointY="18.162985026041667" />
+          <ConnectorPoint PointX="3.25" PointY="18.162985026041667" />
+          <ConnectorPoint PointX="3.25" PointY="15.162985026041667" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="15.162985026041667" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="15.162985026041667" />
+          <ConnectorPoint PointX="2.625" PointY="15.162985026041667" />
+          <ConnectorPoint PointX="2.625" PointY="4.8048579570312491" />
+          <ConnectorPoint PointX="3" PointY="4.8048579570312491" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Monedas_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.393992513020834" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="11.393992513020832" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="11.393992513020834" />
+          <ConnectorPoint PointX="4.3749975" PointY="11.393992513020834" />
+          <ConnectorPoint PointX="4.3749975" PointY="5.9898079427083317" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Procesos_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.047841796875" />
+          <ConnectorPoint PointX="2.375" PointY="9.047841796875" />
+          <ConnectorPoint PointX="2.375" PointY="6.5" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="6.4999999999999991" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.5" />
+          <ConnectorPoint PointX="3.65624675" PointY="6.5" />
+          <ConnectorPoint PointX="3.65624675" PointY="5.9898079427083317" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Tipo_Documentos_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.0287019856770829" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="3.0287019856770825" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="3.0287019856770829" />
+          <ConnectorPoint PointX="3" PointY="3.0287019856770829" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Usuarios_Cabeceras_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="22.778595377604166" />
+          <ConnectorPoint PointX="3.75" PointY="22.778595377604166" />
+          <ConnectorPoint PointX="3.75" PointY="15.412985026041667" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="15.412985026041667" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="15.412985026041667" />
+          <ConnectorPoint PointX="2.75" PointY="15.412985026041667" />
+          <ConnectorPoint PointX="2.75" PointY="10.710999348958332" />
+          <ConnectorPoint PointX="4.2916641666666671" PointY="10.710999348958332" />
+          <ConnectorPoint PointX="4.4583308333333331" PointY="10.710999348958332" />
+          <ConnectorPoint PointX="4.625" PointY="10.710999348958332" />
+          <ConnectorPoint PointX="4.625" PointY="6.1148079427083317" />
+          <ConnectorPoint PointX="4.489583333333333" PointY="6.1148079427083308" />
+          <ConnectorPoint PointX="4.2916641666666662" PointY="6.1148079427083317" />
+          <ConnectorPoint PointX="3.7395800833333337" PointY="6.1148079427083308" />
+          <ConnectorPoint PointX="3.5729134166666667" PointY="6.1148079427083317" />
+          <ConnectorPoint PointX="3.2968713750000003" PointY="6.1148079427083317" />
+          <ConnectorPoint PointX="3.2968713750000003" PointY="5.9898079427083317" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Tipo_Documentos_Detalle_Cheques_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.9851939986979166" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="3.9851939986979161" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="3.9851939986979166" />
+          <ConnectorPoint PointX="2.75" PointY="3.9851939986979166" />
+          <ConnectorPoint PointX="2.75" PointY="0.875" />
+          <ConnectorPoint PointX="6" PointY="0.875" />
+          <ConnectorPoint PointX="6" PointY="1.5" /></AssociationConnector>
+        <AssociationConnector Association="ClearingModel.Usuarios_Detalle_Cheques_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="22.108045688802086" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="22.108045688802086" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="22.108045688802086" />
+          <ConnectorPoint PointX="5.5" PointY="22.108045688802086" />
+          <ConnectorPoint PointX="5.5" PointY="8.2110807291666674" />
+          <ConnectorPoint PointX="6.5" PointY="8.2110807291666674" />
+          <ConnectorPoint PointX="6.5" PointY="5.77830078125" />
+          <ConnectorPoint PointX="6" PointY="5.77830078125" />
+          <ConnectorPoint PointX="6" PointY="5.40330078125" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

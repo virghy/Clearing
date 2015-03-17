@@ -1,0 +1,1350 @@
+/**********************************************************************
+ * Button Styles                                                      *
+ **********************************************************************/
+
+.pruebamenu{	
+	background-image: url(images/XMedia02BlueBR.gif);
+	
+}
+
+.logo
+{
+	height: 58px;
+	width: 100%;
+}
+
+.NormalVerde
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #00cc00;
+}
+
+.headertop
+{
+	background-image: url(Images/tlm_izq.jpg);
+	left: 0px;
+	width: 668px;
+	position: absolute;
+	top: 0px;
+	height: 54px;
+}
+
+.tituloMenu
+{
+	background-image: url(Images/tlm_der_r.jpg); background-repeat: repeat-x;
+	left: 668px;
+	position: absolute;
+	top: 0px;
+	height: 54px;
+	width: 332px;
+
+}
+
+
+a.button_link {
+	color: #888888;
+	font-size: 9px;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	padding-left: 4px;
+	padding-right: 4px;
+	width: 100%;
+	}
+
+#rightcontent {
+		position:  absolute;
+		right:5px;
+		top:140px;
+		width: auto;
+		background:#fff;
+		margin-right:10px;
+			z-index:100;
+
+		}
+#rightcontent1 {
+		position: absolute;
+		right:5px;
+		top:140px;
+		background:#fff;
+		margin-right:10px;
+			z-index:100;
+
+		}
+
+
+a.button_link:hover {
+	color: #666666;
+	}
+
+.button-TL-white {
+	background-image: url(Images/buttonTL.gif);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 15px;
+	height: 4px;
+	}
+.button-T-white {
+	background-image: url(Images/buttonT.gif);
+	background-repeat: repeat-x;
+	background-position: bottom center;
+	height: 4px;
+	}
+.button-TR-white {
+	background-image: url(Images/buttonTR.gif);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	width: 6px;
+	height: 4px;
+	}
+.button-L-white {
+	background-image: url(Images/buttonL.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	width: 5px;
+	height: 12px;
+	}
+.button-white {
+	background-image: url(Images/buttonC.gif);
+	background-repeat: repeat-x;
+	white-space: nowrap;
+	height: 12px; 
+	}
+.button-R-white {
+	background-image: url(Images/buttonR.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	width: 6px;
+	height: 12px; 
+	}
+.button-BL-white {
+	background-image: url(Images/buttonBL.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+	width: 15px;
+	height: 4px;
+	}
+.button-B-white {
+	background-image: url(Images/buttonB.gif);
+	background-repeat: repeat-x;
+	background-position: top center;
+	height: 4px;
+	}
+.button-BR-white {
+	background-image: url(Images/buttonBR.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	width: 6px;
+	height: 4px;
+	}
+.button-divisoria {
+	background-image: url(Images/buttonBR.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	width: 6px;
+	height: 4px;
+	}	
+	 
+
+/* ================================
+    CSS STYLES FOR DotNetNuke
+   ================================
+*/
+
+.collapsePanel {
+	
+	background-color:white;
+	overflow:hidden;
+}
+
+.collapsePanelHeader{	
+	width:100%;		
+	height:30px;
+	background-image: url(images/bg_nav.gif);
+	background-repeat:repeat-x;
+	color:#FFF;
+	font-weight:bold;
+}
+.pruebamenu{	
+	background-image: url(images/prueba.bmp);
+	background-repeat:repeat-x;
+	color:#FFF;
+	font-weight:bold;
+}
+
+
+/* Rounded Corners*/
+
+.roundedPanel
+{	
+	width:300px;	
+	background-color:#5377A9;	
+	color:white;
+	font-weight:bold;		
+}
+
+
+
+/* PAGE BACKGROUND */
+/* background color for the header at the top of the page  */
+.HeadBg
+{
+	background-color: #CCCCCC;
+}
+.Banner
+{
+	color: #cc3333;
+	background-color: #cccccc;
+}
+
+/* background color for the content part of the pages */
+body, div, p, h1, h2, h3, h4, ul, li, table {
+	margin:0;
+	padding:0;
+	border:none;
+}
+	 
+
+body 
+{
+/*	background: #B4B4B4 url(images/body_bg.gif) repeat left top;	*/
+	background: #f8f7f8 ;	
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+}
+/*
+Body
+{
+	background-color:   #ebf1fe;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+}
+*/
+/* background/border colors for the selected tab */
+
+/* Barra  */
+.Barra
+{
+	width: 800px;
+	height: 26px;
+	color: white;
+	background-color: #9999cc;
+	vertical-align: middle;
+	padding-left: 2px;
+}
+.Ocupado
+{
+	background-color: #9999cc;
+	color: White;
+	height:100%;
+
+}
+.Pendientes
+{
+	background-color: #ffff99;
+	color: black;
+	height: 100%;
+}
+
+
+.TabBg
+{
+	background-color: black;
+}
+
+.LeftPane
+{
+	font-size: 11px;
+	width: 150px;
+	font-family: Tahoma, Arial, Helvetica;
+	background-color: #ccccff;
+	background-image: url(Images/sidebar.jpg);
+	
+	
+}
+.Box
+{ 
+	
+background-color: white; 
+}
+
+
+
+.Box-titulo-left
+{
+	width: 11px;
+	height:30px;
+	background-image: url(Images/Box/izq-arriba.png);
+	
+}
+.Box-titulo-med
+{
+    height: 30px;
+    background-image: url(Images/Box/med-arriba.png);
+    font-weight: bold;
+    font-size: 11pt;
+    color: white;
+    font-family: Arial, Verdana;
+    vertical-align: top;
+}
+.Titulos
+{
+	height: 20px;
+	background-image: url(Images/grdhead_bk.png);
+	font-family: Arial, Verdana;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+
+.Box-titulo-venta
+{
+    height: 30px;
+    background-image: url(Images/Box/med-arriba.png);
+    font-weight: bold;
+    font-size: 9pt;
+    color: white;
+    font-family: Arial, Verdana;
+    vertical-align: top;
+}
+
+.Box-titulo-right
+{
+	width: 11px;
+	height:30px;
+	background-image: url("Images/Box/der-arriba.png");	
+}
+
+.Box-abajo-izq
+{
+	width: 11px;
+	height:14px;
+	background-image: url("Images/Box/izq-abajo.png");	
+}
+.Box-izq
+{
+	width: 11px;
+	background-image: url("Images/Box/med-izq.png");	
+}
+.Box-der
+{
+	width: 11px;
+	background-image: url("Images/Box/med-der.png");
+	
+}
+
+
+.Box-abajo-med
+{
+	width: 11px;
+	height:14px;
+	background-image: url("Images/Box/med-abajo.png");	
+}
+
+.Box-abajo-med-menu
+{
+	width: 100%;
+	height:2px;
+	background-image: url("Images/Box/med-abajo-med.png");	
+}
+.pruebaw
+{
+	width: 100%;
+	height:6px;
+	background-image: url("Images/pruebamenu.bmp");	
+}
+
+
+
+
+.Box-abajo-der
+{
+	width: 11px;
+	height:14px;
+	background-image: url("Images/Box/der-abajo.png");	
+}
+
+
+
+.ContentPane
+{
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	position: static;
+
+	
+}
+
+.RightPane
+{
+}
+
+.FooterPane
+{
+}
+
+
+/* text style for the selected tab */
+.SelectedTab
+{
+	font-weight: bold;
+	font-size: 8.5pt;
+	color: white;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+/* hyperlink style for the selected tab */
+A.SelectedTab:link
+{
+	text-decoration: none;
+	color: white;
+}
+
+A.SelectedTab:visited
+{
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+A.SelectedTab:active
+{
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+A.SelectedTab:hover
+{
+	text-decoration: none;
+	color: #cccccc;
+}
+
+/* text style for the unselected tabs */
+.OtherTabs
+{
+	font-weight: bold;
+	font-size: 8.5pt;
+	color: white;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+
+/* hyperlink style for the unselected tabs */
+A.OtherTabs:link
+{
+	text-decoration: none;
+	color: white;
+}
+
+A.OtherTabs:visited
+{
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+A.OtherTabs:active
+{
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+A.OtherTabs:hover
+{
+	text-decoration: none;
+	color: #cccccc;
+}
+
+/* GENERAL */
+/* style for module titles */
+.Head
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 20px;
+	font-weight: normal;
+	color: #333333;
+}
+
+/* style of item titles on edit and admin pages */
+.SubHead
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+}
+
+/* module title style used instead of Head for compact rendering by QuickLinks and Signin modules */
+.SubSubHead
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: black;
+}
+
+/* text style used for most text rendered by modules */
+.Normal
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+}
+.Reports
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+	color: Olive;
+}
+.Forms
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+	color: Teal;
+}
+/* text style used for textboxes in the admin and edit pages, for Nav compatibility */
+.NormalTextBox
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.NormalRed
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.NormalBold
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* text style for buttons and link buttons used in the portal admin pages */
+.CommandButton
+{
+    font-weight: normal;
+    font-size:11px;
+    width: 52px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-align: right;
+    height: 24px;
+    vertical-align: baseline;
+    background: url(Images/saveHG.gif);
+}
+.BotonBarra
+{
+    font-weight: normal;
+    font-size: 11px;
+    font-family: Tahoma, Arial, Helvetica;
+    text-align: right;
+    height: 16px;
+    background-position: 0% 0%;
+    background-attachment: scroll;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+A.BotonBarra:link
+{
+	text-decoration: none;
+	color:  black;
+}
+
+A.BotonBarra:visited
+{
+	text-decoration: none;
+	color: black;
+}
+
+A.BotonBarra:active
+{
+	text-decoration: none;
+	color: black;
+}
+
+A.BotonBarra:hover
+{
+    text-decoration: none;
+    color: black;
+    background-color: #ffffcc;
+}
+
+  
+.CommandButtonBig
+{
+	font-weight: normal;
+	font-size: 13px;
+	background-image: url(Images/buttonBiggrande.gif);
+	vertical-align: text-bottom;
+	width: 120px;
+	background-repeat: no-repeat;
+	font-family: Arial, Arial, Helvetica;
+	height: 24px;
+	text-align: center;
+}
+.CommandBoton
+{
+	font-weight: normal;
+	font-size: 12px;
+	background-image: url(Images/buttonBig.gif);
+	vertical-align: text-bottom;
+	width: 81px;
+	background-repeat: no-repeat;
+	font-family: Tahoma, Arial, Helvetica;
+	height: 18px;
+	text-align: center;
+}
+
+
+/* hyperlink style for buttons and link buttons used in the portal admin pages */
+A.CommandButton:link,A.CommandButtonBig:link
+{
+	color: #003366;
+	text-decoration: none;
+}
+
+A.CommandButton:visited,A.CommandButtonBig:visited
+{
+	text-decoration: none;
+	color: #003366;
+}
+
+A.CommandButton:active,A.CommandButtonBig:active
+{
+	text-decoration: none;
+	color: #003366;
+}
+
+A.CommandButton:hover,A.CommandButtonBig:hover
+{
+	text-decoration: none;
+	color: #ff0000;
+	vertical-align: text-bottom;
+}
+
+/* GENERIC */
+H1
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 24px;
+	font-weight: normal;
+	color: #666644;
+}
+
+H2
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 20px;
+	font-weight: normal;
+	color: #666644;
+}
+
+H3
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #003366;
+}
+
+H4
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 12px;
+	font-weight: normal;
+	color: #003366;
+}
+
+H5, DT
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+}
+
+H6
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+}
+
+TFOOT, THEAD
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 12px;
+	color: #003366;
+}
+
+TH
+{
+	vertical-align: baseline;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+A:link
+{
+	color: Black;
+	text-decoration: none;
+}
+
+A:visited
+{
+	text-decoration: none;
+	color: Black;
+}
+
+A:active
+{
+	text-decoration: none;
+	color: Black;
+}
+
+A:hover
+{
+	text-decoration: underline;
+	color: #ff0000;
+}
+
+SMALL
+{
+	font-size: 8px;
+}
+
+BIG
+{
+	font-size: 14px;
+}
+
+BLOCKQUOTE, PRE
+{
+	font-family: Lucida Console, monospace;
+}
+
+
+UL LI
+{
+	list-style-type: square;
+}
+
+UL LI LI
+{
+	list-style-type: disc;
+}
+
+UL LI LI LI
+{
+	list-style-type: circle;
+}
+
+OL LI
+{
+	list-style-type: decimal;
+}
+
+OL OL LI
+{
+	list-style-type: lower-alpha;
+}
+
+OL OL OL LI
+{
+	list-style-type: lower-roman;
+}
+
+HR
+{
+	color: Silver;
+	height: 1pt;
+	text-align: left;
+}
+
+/* MODULE-SPECIFIC */
+/* text style for reading messages in Discussion */
+.Message
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #eeeeee;
+}
+
+/* style of item titles by Announcements and events */
+.ItemTitle
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #003366;
+}
+
+/* Menu-Styles */
+/* Module Title Menu */
+.ModuleTitle_MenuContainer
+{
+	border-bottom: blue 0px solid;
+	border-left: blue 0px solid;
+	border-top: blue 0px solid;
+	border-right: blue 0px solid;
+}
+
+.ModuleTitle_MenuBar
+{
+	cursor: hand;
+	height: 16;
+	background-color: Transparent;
+}
+
+.ModuleTitle_MenuItem
+{
+
+	cursor: hand;
+	color: black;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+	font-weight: bold;
+	font-style: normal;
+	border-left: white 0px solid;
+	border-bottom: white 1px solid;
+	border-top: white 1px solid;
+	border-right: white 0px solid;
+	background-color: Transparent;
+}
+
+.ModuleTitle_MenuIcon
+{
+
+	cursor: hand;
+	background-color: #EEEEEE;
+	border-left: #EEEEEE 1px solid;
+	border-bottom: #EEEEEE 1px solid;
+	border-top: #EEEEEE 1px solid;
+	text-align: center;
+	width: 15;
+	height: 21;
+}
+
+.ModuleTitle_SubMenu
+{
+	z-index: 1000;
+
+	cursor: hand;
+	background-color: #FFFFFF;
+	border-bottom: #FFFFFF 0px solid;
+	border-left: #FFFFFF 0px solid;
+	border-top: #FFFFFF 0px solid;
+	border-right: #FFFFFF 0px solid;
+}
+
+.ModuleTitle_MenuBreak
+{
+	border-bottom: #EEEEEE 1px solid;
+	border-left: #EEEEEE 0px solid;
+	border-top: #EEEEEE 1px solid;
+	border-right: #EEEEEE 0px solid;
+	background-color: #EEEEEE;
+	height: 1px;
+}
+
+.ModuleTitle_MenuItemSel
+{
+
+	cursor: hand;
+	color: black;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+	font-weight: bold;
+	font-style: normal;
+	background-color: #C1D2EE;
+}
+
+.ModuleTitle_MenuArrow
+{
+	font-family: webdings;
+	font-size: 10pt;
+
+	cursor: hand;
+	border-right: #FFFFFF 1px solid;
+	border-bottom: #FFFFFF 1px solid;
+	border-top: #FFFFFF 0px solid;
+}
+
+.ModuleTitle_RootMenuArrow
+{
+	font-family: webdings;
+	font-size: 10pt;
+	cursor: hand;
+}
+
+/* Main Menu */
+
+.MainMenu_MenuContainer
+{
+	border-bottom: #404040 0px solid;
+	border-left: #FF8080 0px solid;
+	border-top: #FF8080 0px solid;
+	border-right: #404040 0px solid;
+	background-color: #333333;
+}
+
+.MainMenu_MenuBar
+{
+	cursor: hand;
+	height: 16;
+}
+
+.MainMenu_MenuItem
+{
+	cursor: hand;
+	color: White;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+	font-weight: bold;
+	font-style: normal;
+	border-left: #333333 0px solid;
+	border-bottom: #333333 1px solid;
+	border-top: #333333 1px solid;
+	border-right: #333333 0px solid;
+}
+
+.MainMenu_MenuIcon
+{
+	cursor: hand;
+	background-color: #333333;
+	border-left: #333333 1px solid;
+	border-bottom: #333333 1px solid;
+	border-top: #333333 1px solid;
+	text-align: center;
+	width: 15;
+	height: 21;
+}
+
+.MainMenu_SubMenu
+{
+	z-index: 1000;
+	cursor: hand;
+	background-color: #333333;
+	border-bottom: #404040 0px solid;
+	border-left: #FF8080 0px solid;
+	border-top: #FF8080 0px solid;
+	border-right: #404040 0px solid;
+}
+
+.MainMenu_MenuBreak
+{
+	border-bottom: #404040 1px solid;
+	border-left: #FF8080 0px solid;
+	border-top: #FF8080 1px solid;
+	border-right: #404040 0px solid;
+	background-color: White;
+	height: 1px;
+}
+
+.MainMenu_MenuItemSel
+{
+	background-color: #CCCCCC;
+	cursor: hand;
+	color: White;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.MainMenu_MenuArrow
+{
+	font-family: webdings;
+	font-size: 10pt;
+	cursor: hand;
+	border-right: #333333 1px solid;
+	border-bottom: #333333 1px solid;
+	border-top: #333333 0px solid;
+}
+
+.MainMenu_RootMenuArrow
+{
+	font-family: webdings;
+	font-size: 10pt;
+	cursor: hand;
+}
+TABLE
+{
+	font-size: 11px;
+	font-family: Tahoma, Arial, Helvetica;
+	vertical-align:top;
+}
+
+/*DataGridStyle
+
+
+.DataGridStyle
+{
+	border-width: 1px;
+	border-color: #E7E7FF;
+	border-style: none;
+	padding: 3;
+	background-color:White
+}
+
+
+
+.SelectedItemStyle
+{
+	font-weight: bold;
+	color: #4a3c8c;
+	background-color: peachpuff;
+}
+.AlternatingItemStyle
+{
+	background-color: #F7F7F7;
+	color:#4A3C8C;
+}
+.ItemStyle
+{
+	color: #4a3c8c;
+	background-color: lavender;
+}
+.HeaderStyle
+{
+	font-weight: bold;
+	color: Red;
+	background-color: #4a3c8c;
+}
+.FooterStyle
+{
+	color: #4A3C8C;
+	background-color: #E7E7FF;
+}
+.PagerStyle
+{
+	color: #4A3C8C;
+	background-color: #E7E7FF;
+}
+*/
+
+TEXTAREA
+{ 
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: normal;
+}
+TableMain
+{
+	font-size: 11px;
+	overflow: scroll;
+	font-family: Tahoma,Arial;
+}
+.Titulo
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 12px;
+	font-weight: normal;
+	color: #3366cc;
+	background-image: url(Images/tabheader.gif);
+}
+
+/* text style para el Menu */
+
+
+.TopMenuTitulo
+{
+	font-weight: bold;
+	font-size: 10pt;
+	background-image: url(Images/long_button.gif);
+	vertical-align: super;
+	width: 159px;
+	color: white;
+	font-family: Tahoma, Arial, Helvetica;
+	height: 32px;
+	text-align: center;
+	text-decoration: none;
+}
+.Tab
+{
+	background-image: url(Images/long_button-1.gif);
+	background-repeat: repeat;
+	height: 32px;
+}
+
+.TopMenu
+{
+	font-weight: bold;
+	font-size: 10pt;
+	vertical-align: sub;
+	width:158px;
+	color: white;
+	font-family: Tahoma, Arial, Helvetica;
+	height: 16px;
+	text-align: center;
+	text-decoration: none;
+}
+/* hyperlink style for the selected tab */
+/*Titulo chico del menu*/
+.Menu
+{
+    font-weight: normal;
+    font-size: 8.5pt;
+    margin-left: 10px;
+    color: gray;
+    font-family: Tahoma, Arial, Helvetica;
+    text-decoration: none;
+}
+.BarraMenu { background-color: #d1e2fe; padding: 5px 5px 5px 5px; color: #1a76b7; }
+
+A.Menu:link
+{
+	text-decoration: none;
+	color:  black;
+}
+
+A.Menu:visited
+{
+	text-decoration: none;
+	color: black;
+}
+
+A.Menu:active
+{
+	text-decoration: none;
+	color: black;
+}
+
+A.Menu:hover
+{
+	text-decoration: none;
+	color: Red;
+}
+
+A.TopMenu:link
+{
+	text-decoration: none;
+	color: White;
+}
+
+A.TopMenu:visited
+{
+	text-decoration: none;
+	color: white;
+}
+
+
+A.TopMenu:active
+{
+	text-decoration: none;
+	color:#eceae7;
+
+	/*color:  Lime;*/
+}
+
+A.TopMenu:hover
+{
+	text-decoration: none;
+	color: Yellow;
+}
+.MenuItem
+{
+	font-weight: normal;
+	font-size: 8.5pt;
+	color: black;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.TopTitulo
+{
+	font-weight:normal;
+	font-size: 19pt;
+	background-image: url(Images/top-r.gif);
+	color: white;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.MenuTitulo
+{
+	font-weight: bold;
+	font-size: 10pt;
+	margin-left: 5px;
+	color: black;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.MenuSistema
+{
+	font-weight: Normal;
+	font-size: 10pt;
+	margin-left: 10px;
+	color: Teal;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+A.MenuSistema:link
+{
+	text-decoration: none;
+	color: Teal;
+}
+
+A.MenuSistema:visited
+{
+	text-decoration: none;
+	color: Navy;
+}
+
+A.MenuSistema:active
+{
+	text-decoration: none;
+	color: Blue;
+}
+
+A.MenuSistema:hover
+{
+	text-decoration:  UnderLine;
+	color: Red;
+}
+.TituloSistema
+{
+	font-weight: bold;
+	font-size: 10pt;
+	margin-left: 5px;
+	color: Navy;
+	font-family: Tahoma, Arial, Helvetica;
+	text-decoration: none;
+}
+.TituloDivision
+{
+	font-weight: bold;
+	font-size: 10pt;
+	background-image: url(Images/Division.gif);
+	color: Black;
+	font-family: Tahoma, Arial, Helvetica;
+	background-repeat: no-repeat;
+	background-repeat:repeat-y;
+	text-decoration: none;
+}
+.Error
+{
+	font-size: 11px;
+	font-family: Tahoma, Arial, Helvetica;
+	color:Red;
+}
+.MenuCommand
+{
+    background-attachment: scroll;
+    background-image: url(App_Themes/Default/Images/saveHS.png);
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    text-align: right;
+}
+
+
+/**********************************************************************
+ * Pagination Styles                                                  *
+ **********************************************************************/
+.button_bar_cell {
+	background-image:url(Images/paginationRowT.gif);
+	background-repeat: repeat-x;
+	vertical-align: middle;
+	padding-left: 3px;
+	padding-top: 7px;
+	}
+
+.pagination_area {
+	background-image:url(Images/paginationRowT.gif);
+	background-repeat: repeat-x;
+	color: #003366;
+	text-align: left;
+	white-space: nowrap;	
+	vertical-align: bottom;
+	}
+
+.pagination_label {
+	color: #003366;
+	font-weight: normal;
+	vertical-align: middle;
+	white-space: nowrap;	
+	padding: 2px;
+	}
+
+.pagination_value {
+	color: #003366;
+	font-weight: bold;
+	vertical-align: middle;
+	white-space: nowrap;	
+	padding: 2px;
+	padding-right: 5px;
+	padding-left: 5px;
+	}
+
+.Pagination_Input {
+	font-family: Verdana, Geneva, ms sans serif;
+	font-size: 10px;
+	background-color: #ffffff;
+	border-top: 1px #555555 solid;
+	border-left: 1px #555555 solid;
+	border-right: 1px #eeeeee solid;
+	border-bottom: 1px #eeeeee solid;
+	}
+
+.pagination_row {
+	font-weight: bold;
+	vertical-align: middle;
+	}
+
+.paginationRowEdgeL {
+	background-image:url(Images/paginationRowEdgeL.gif); 
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 40px;
+	}
+
+.paginationRowEdgeR {
+	background-image:url(Images/paginationRowEdgeR.gif);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 40px;
+	}
+	
+.paginationButtonFirst {
+	background-image:url(Images/arrow_beg.gif);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 25px;
+	}
+
+.paginationButtonPrevious {
+	background-image:url(Images/arrow_left.gif);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 25px;
+	}
+
+.paginationButtonNext {
+	background-image:url(Images/arrow_right.gif);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 25px;
+	}
+
+.paginationButtonLast {
+	background-image:url(Images/arrow_end.gif);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 25px;
+	}
+

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Clearing" Class="ClearingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MARTE\SQLEXPRESS;Initial Catalog=Clearing;Integrated Security=True" SettingsObjectName="DataAccess.My.MySettings" SettingsPropertyName="FranquiciaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Ciudad" Member="Ciudad">
+    <Type Name="Ciudad">
+      <Column Name="idCiudad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idRegion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Region_Ciudad" Member="Region" ThisKey="idRegion" Type="Region" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Region" Member="Region">
+    <Type Name="Region">
+      <Column Name="idRegion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Region_Ciudad" Member="Ciudad" OtherKey="idRegion" Type="Ciudad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categoria" Member="Categoria">
+    <Type Name="Categoria">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visitas" Member="Visitas">
+    <Type Name="Visitas">
+      <Column Name="idvisita" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idreunion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idfranquiciado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Atendidopor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estados" Member="Estados">
+    <Type Name="Estados">
+      <Column Name="cod_estado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tabla" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

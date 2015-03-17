@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Clearing" Class="ClearingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Clearing;Integrated Security=True" SettingsObjectName="ClearingDA.My.MySettings" SettingsPropertyName="ClearingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Monedas" Member="Monedas">
+    <Type Name="Monedas">
+      <Column Name="cod_moneda" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="decimales" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Documentos" Member="Tipo_Documentos">
+    <Type Name="Tipo_Documentos">
+      <Column Name="codTipoDocumento" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Imagen" Member="Imagen">
+    <Type Name="Imagen">
+      <Column Name="IdImagen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+    <InsertFunction FunctionId="FunctionId1">
+      <Argument Parameter="idImagen" Member="IdImagen" />
+      <Argument Parameter="nombre" Member="nombre" />
+      <Argument Parameter="imagen" Member="imagen" />
+    </InsertFunction>
+  </Table>
+  <Table Name="dbo.Camara" Member="Camara">
+    <Type Name="Camara">
+      <Column Name="cod_camara" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sucursales" Member="Sucursales">
+    <Type Name="Sucursales">
+      <Column Name="cod_sucursal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_sucusal" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="cod_banco" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Bancos_Sucursales" Member="Bancos" Storage="_Banco" ThisKey="cod_banco" OtherKey="cod_banco" Type="Bancos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Maquinas" Member="Maquinas">
+    <Type Name="Maquinas">
+      <Column Name="cod_maquina" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_maquina" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="nro_corrida_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nro_corrida_final" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estados" Member="Estados">
+    <Type Name="Estados">
+      <Column Name="cod_estado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tabla" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Estados_Bancos" Member="Bancos" ThisKey="cod_estado" OtherKey="estado" Type="Bancos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bancos" Member="Bancos">
+    <Type Name="Bancos">
+      <Column Name="cod_banco" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_banco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CuentaPais" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Bancos_Sucursales" Member="Sucursales" ThisKey="cod_banco" OtherKey="cod_banco" Type="Sucursales" />
+      <Association Name="Estados_Bancos" Member="Estados" ThisKey="estado" OtherKey="cod_estado" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CuentasEspeciales" Member="CuentasEspeciales">
+    <Type Name="CuentasEspeciales">
+      <Column Name="IdCuenta" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdBanco" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreCuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Audit_Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Audit_Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MotivosRechazo" Member="MotivosRechazos">
+    <Type Name="MotivosRechazo">
+      <Column Name="IdMotivo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdBanco" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdMotivoBCP" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Audit_Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Audit_Usuario" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="AplicaComision" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ascii" Member="Asciis">
+    <Type Name="Ascii">
+      <Column Name="idcabecera" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cod_banco" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="registro_inicio" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="registro_fin" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="sql" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="IdFormato" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstructuraDestino" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArchivoDestino" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Ascii_Ascii_det" Member="Ascii_dets" ThisKey="idcabecera" OtherKey="idcabecera" Type="Ascii_det" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ascii_det" Member="Ascii_dets">
+    <Type Name="Ascii_det">
+      <Column Name="iddetalle" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idcabecera" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="orden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="longitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="formato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Ascii_Ascii_det" Member="Ascii" ThisKey="idcabecera" OtherKey="idcabecera" Type="Ascii" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Feriados" Member="Feriados">
+    <Type Name="Feriado">
+      <Column Name="IdFeriado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dia" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Mes" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Año" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MultiAnual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Audit_Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Audit_Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Id="FunctionId1" Name="dbo.GrabarImagen" Method="GrabarImagen">
+    <Parameter Name="IdImagen" Parameter="idImagen" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagen" Parameter="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

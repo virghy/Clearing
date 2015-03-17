@@ -1,0 +1,88 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;DRIVER=Microsoft Visual FoxPro Driver;sourcedb=C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data;sourcetype=DBF;exclusive=No;backgroundfetch=Yes;collate=Machine;null=Yes;deleted=Yes&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">DRIVER=Microsoft Visual FoxPro Driver;sourcedb=C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data;sourcetype=DBF;exclusive=No;backgroundfetch=Yes;collate=Machine;null=Yes;deleted=Yes</Value>
+    </Setting>
+    <Setting Name="Proceso" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Enviado</Value>
+    </Setting>
+    <Setting Name="Camara" Type="System.String" Scope="User">
+      <Value Profile="(Default)">01</Value>
+    </Setting>
+    <Setting Name="Carpeta" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\sistemas\clearing\</Value>
+    </Setting>
+    <Setting Name="Moneda" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PYG</Value>
+    </Setting>
+    <Setting Name="CalidadImpresion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
+    <Setting Name="ASPNETConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\sqlexpress;Initial Catalog=ASPNET;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\sqlexpress;Initial Catalog=ASPNET;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="CarpetaImagen" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Images</Value>
+    </Setting>
+    <Setting Name="ValidarCuenta1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Si</Value>
+    </Setting>
+    <Setting Name="Otro" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Scanner" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CanonCR180II</Value>
+    </Setting>
+    <Setting Name="ClearingConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="ClearingConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="FranquiciaConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Maquina" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="IdEmpresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">41</Value>
+    </Setting>
+    <Setting Name="CarpetaFTP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FTP</Value>
+    </Setting>
+    <Setting Name="LecturaAsincrona" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SucursalMaxLenght" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

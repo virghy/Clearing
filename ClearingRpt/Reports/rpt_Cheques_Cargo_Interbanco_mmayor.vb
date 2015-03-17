@@ -1,0 +1,3 @@
+﻿Public Class rpt_Cheques_Cargo_Interbanco_mmayor
+
+End Class

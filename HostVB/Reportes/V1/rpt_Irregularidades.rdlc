@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="ClearingConnectionString">
+      <rd:DataSourceID>8f52f271-adeb-4f08-ad63-749e4fa6ea8f</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=.\sqlexpress;Initial Catalog=ClearingFamiliar;Integrated Security=True</ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>27.9cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="NombreBanco">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="Mascara">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Moneda">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5cm</RightMargin>
+  <LeftMargin>0.5cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox12">
+        <Top>2.5cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>16.75cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Mtvo.Rch.</Value>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <Top>2.5cm</Top>
+        <Width>1.75cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>7cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Fecha</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>2.5cm</Top>
+        <Width>1cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Doc</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <Top>2.5cm</Top>
+        <Width>1cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.5cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Bco</Value>
+      </Textbox>
+      <Textbox Name="NombreBanco">
+        <Top>0.25cm</Top>
+        <Width>6.75cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Parameters!NombreBanco.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>0.25cm</Top>
+        <Width>3.5cm</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>8pt</FontSize>
+          <Format>S</Format>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>15.78968cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <Top>1cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <FontStyle>Italic</FontStyle>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>16.75cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>="Pag. " + Globals!PageNumber.ToString</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <Top>1.25cm</Top>
+        <Width>11.25cm</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.25cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>="REPORTE DE IRREGULARIDADES "</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>2.5cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Cta Citi</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>2.5cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>13.75cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Importe</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Top>2.5cm</Top>
+        <Width>2cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9.25cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Cuenta</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>2.5cm</Top>
+        <Width>2.03968cm</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>11.5cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Serie</Value>
+      </Textbox>
+      <Line Name="line2">
+        <Top>3.05291cm</Top>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Left>1cm</Left>
+        <Height>0cm</Height>
+      </Line>
+    </ReportItems>
+    <Height>3.25cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5cm</BottomMargin>
+  <rd:ReportID>97538665-2060-41c6-9edf-f3b336e1a798</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="dsReportes_Irregularidades">
+      <Fields>
+        <Field Name="IdCuenta">
+          <DataField>IdCuenta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreCuenta">
+          <DataField>NombreCuenta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fecha_lectura">
+          <DataField>fecha_lectura</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Motivo">
+          <DataField>Motivo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IdMotivo">
+          <DataField>IdMotivo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nro_lote">
+          <DataField>nro_lote</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="cod_tipdoc">
+          <DataField>cod_tipdoc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cuenta_cheque">
+          <DataField>cuenta_cheque</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numero_cheque">
+          <DataField>numero_cheque</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cod_banco_receptor">
+          <DataField>cod_banco_receptor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cod_banco_emisor">
+          <DataField>cod_banco_emisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="monto">
+          <DataField>monto</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="cod_moneda">
+          <DataField>cod_moneda</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IdMotivoBCP">
+          <DataField>IdMotivoBCP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ClearingConnectionString</DataSourceName>
+        <CommandText>SELECT     ce.IdCuenta, ce.NombreCuenta, ld.fecha_lectura, mr.Motivo, ld.IdMotivo, le.nro_lote, ld.cod_tipdoc, ld.cuenta_cheque, ld.numero_cheque, ld.cod_banco_receptor, 
+                      ld.cod_banco_emisor, ld.monto, ld.cod_moneda,mr.IdMotivoBCP
+FROM         CuentasEspeciales AS ce INNER JOIN
+                      Lecturas AS le ON ce.IdCuenta = le.cuenta_deposito AND ce.IdBanco = le.cod_banco INNER JOIN
+                      Lecturas AS ld ON le.cod_banco = ld.cod_banco AND le.cuenta_cheque = ld.cuenta_cheque AND le.numero_cheque = ld.numero_cheque AND 
+                      le.cod_banco_receptor = ld.cod_banco_receptor AND le.cod_moneda = ld.cod_moneda INNER JOIN
+                      MotivosRechazo AS mr ON ld.cod_banco = mr.IdBanco AND ld.IdMotivo = mr.IdMotivo
+WHERE     (le.cod_proceso = 2) AND (ld.cod_proceso = 1)
+and ce.IdBanco =@CodBanco and ld.Fecha_lectura between @dFecha and @hFecha
+Order by ce.IdCuenta,ld.fecha_lectura,ld.cod_banco_receptor</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>dsReportes</rd:DataSetName>
+        <rd:TableName>Irregularidades</rd:TableName>
+        <rd:TableAdapterName>IrregularidadesTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>19.75cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <List Name="list1">
+        <Left>0.5cm</Left>
+        <DataSetName>dsReportes_Irregularidades</DataSetName>
+        <ReportItems>
+          <Textbox Name="textbox13">
+            <Width>1cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>17.25cm</Left>
+            <Value>=Fields!IdMotivoBCP.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox9">
+            <Width>2.25cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>8.5cm</Left>
+            <Value>=Fields!cuenta_cheque.Value</Value>
+          </Textbox>
+          <Textbox Name="IdCuenta">
+            <rd:DefaultName>IdCuenta</rd:DefaultName>
+            <Width>4.5cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.5cm</Left>
+            <Value>=Fields!IdCuenta.Value.ToString +" "+ Fields!NombreCuenta.Value</Value>
+          </Textbox>
+          <Textbox Name="fecha_lectura">
+            <rd:DefaultName>fecha_lectura</rd:DefaultName>
+            <Width>2cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <Format>S</Format>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>6.5cm</Left>
+            <Value>=FormatDateTime(Fields!fecha_lectura.Value,2)</Value>
+          </Textbox>
+          <Textbox Name="cod_tipdoc">
+            <rd:DefaultName>cod_tipdoc</rd:DefaultName>
+            <Width>0.75cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.75cm</Left>
+            <Value>=Fields!cod_tipdoc.Value</Value>
+          </Textbox>
+          <Textbox Name="numero_cheque">
+            <rd:DefaultName>numero_cheque</rd:DefaultName>
+            <Width>2cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>11cm</Left>
+            <Value>=Fields!numero_cheque.Value</Value>
+          </Textbox>
+          <Textbox Name="cod_banco_receptor">
+            <rd:DefaultName>cod_banco_receptor</rd:DefaultName>
+            <Width>0.75cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5cm</Left>
+            <Value>=Fields!cod_banco_receptor.Value</Value>
+          </Textbox>
+          <Textbox Name="monto">
+            <rd:DefaultName>monto</rd:DefaultName>
+            <Width>2.53968cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <Format>N2</Format>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>13.25cm</Left>
+            <Value>=Fields!monto.Value</Value>
+          </Textbox>
+          <Textbox Name="cod_moneda">
+            <rd:DefaultName>cod_moneda</rd:DefaultName>
+            <Width>1cm</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>15.75cm</Left>
+            <Value>=Fields!cod_moneda.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Width>18.75cm</Width>
+      </List>
+    </ReportItems>
+    <Height>0.63492cm</Height>
+  </Body>
+  <Language>es-ES</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Line Name="line1">
+        <Top>0.25cm</Top>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Left>1cm</Left>
+        <Height>0cm</Height>
+      </Line>
+    </ReportItems>
+    <Height>1.25cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5cm</TopMargin>
+  <PageHeight>27.9cm</PageHeight>
+</Report>

@@ -1,0 +1,44 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop FAQs Table **/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Futura_ClearingModule] DROP CONSTRAINT [FK_{objectQualifier}ClearingModule_{objectQualifier}Modules]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Futura_ClearingModule] DROP CONSTRAINT [PK_{objectQualifier}Futura_ClearingModule]
+GO
+
+DROP INDEX {databaseOwner}[{objectQualifier}Futura_ClearingModule].[IX_{objectQualifier}Futura_ClearingModule]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}Futura_ClearingModule]
+GO
+
+/** Drop Stored Procedures **/
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Futura_GetClearingModules]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Futura_GetClearingModule]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Futura_AddClearingModule]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Futura_UpdateClearingModule]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Futura_DeleteClearingModule]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

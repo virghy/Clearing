@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MICR.MICRCabecera">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGQAAABAGAAAAAAABAEAABAAAAgACBIQAAAACEAAAAE=</HashCode>
+      <FileName>MICR.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MICR.MICRDetalle">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQkAAFAGAAAAAQIIAEAABAAAAgAABIQAAIACkAAAAA=</HashCode>
+      <FileName>MICR.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MICR.CanonAPIbase" Collapsed="true">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="MICR.CanonAPIbase.VIEWOFIMAGE" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CanonAPIbase.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="MICR.CanonAPIbase.CEIIMAGEFILEINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CanonAPIbase.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="MICR.CanonAPIbase.CEIIMAGEINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CanonAPIbase.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Enum Name="MICR.CanonAPIbase.CSDP_MODEAttribute" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CanonAPIbase.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAEgAKYYEIAIAAgAAAACgIAiADAIgACAMAAABAACGI=</HashCode>
+      <FileName>CanonAPIbase.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MICR.CanonAPI1" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEgAKYYEIAAABgAAAACgAAiADAAgACAMAAABAACGI=</HashCode>
+      <FileName>CanonAPI.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MICR.CanonAPI">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAIYAgIAAABAAAAACAMAwAAAIAAlAAAEAFAAAhI=</HashCode>
+      <FileName>CanonAPI.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MICR.CANON55">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAIYAgIAAABAAAAACAMAwAAAIAAlAAAEAFAAAhI=</HashCode>
+      <FileName>CANON55.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

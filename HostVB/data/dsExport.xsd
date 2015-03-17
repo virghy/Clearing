@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsExport" targetNamespace="http://tempuri.org/dsExport.xsd" xmlns:mstns="http://tempuri.org/dsExport.xsd" xmlns="http://tempuri.org/dsExport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DBFConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DBFConnectionString (MySettings)" PropertyReference="ApplicationSettings.HostVB.My.MySettings.GlobalReference.Default.DBFConnectionString" Provider="System.Data.Odbc" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ClearingConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ClearingConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HostVB.My.MySettings.GlobalReference.Default.ClearingConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EnvassTableAdapter" GeneratorDataComponentClassName="EnvassTableAdapter" Name="ENVASS" UserDataComponentName="EnvassTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        cl_banco, cl_doc, cl_cta, cl_ser, cl_bcore, cl_cam, cl_monto, cl_suc, cl_lote, cl_caj, cl_ope, cl_maq, cl_corr, cl_bols, cl_obs
+FROM            envass</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cl_banco" DataSetColumn="cl_banco" />
+              <Mapping SourceColumn="cl_doc" DataSetColumn="cl_doc" />
+              <Mapping SourceColumn="cl_cta" DataSetColumn="cl_cta" />
+              <Mapping SourceColumn="cl_ser" DataSetColumn="cl_ser" />
+              <Mapping SourceColumn="cl_bcore" DataSetColumn="cl_bcore" />
+              <Mapping SourceColumn="cl_cam" DataSetColumn="cl_cam" />
+              <Mapping SourceColumn="cl_monto" DataSetColumn="cl_monto" />
+              <Mapping SourceColumn="cl_suc" DataSetColumn="cl_suc" />
+              <Mapping SourceColumn="cl_lote" DataSetColumn="cl_lote" />
+              <Mapping SourceColumn="cl_caj" DataSetColumn="cl_caj" />
+              <Mapping SourceColumn="cl_ope" DataSetColumn="cl_ope" />
+              <Mapping SourceColumn="cl_maq" DataSetColumn="cl_maq" />
+              <Mapping SourceColumn="cl_corr" DataSetColumn="cl_corr" />
+              <Mapping SourceColumn="cl_bols" DataSetColumn="cl_bols" />
+              <Mapping SourceColumn="cl_obs" DataSetColumn="cl_obs" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE from envass</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO envass
+                         (cl_banco, cl_doc, cl_cta, cl_ser, cl_bcore, cl_cam, cl_monto, cl_suc, cl_lote, cl_caj, cl_ope, cl_maq, cl_corr, cl_bols, cl_obs)
+VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="cl_banco" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_banco" Precision="3" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_banco" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="cl_doc" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_doc" Precision="3" ProviderType="Int" Scale="0" Size="3" SourceColumn="cl_doc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="cl_cta" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="C" DbType="AnsiString" Direction="Input" ParameterName="cl_cta" Precision="0" Scale="0" Size="1024" SourceColumn="cl_cta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="cl_ser" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_ser" Precision="9" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_ser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="cl_bcore" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_bcore" Precision="3" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_bcore" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param6" ColumnName="cl_cam" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_cam" Precision="3" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_cam" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param7" ColumnName="cl_monto" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_monto" Precision="15" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_monto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="cl_suc" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_suc" Precision="5" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_suc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param9" ColumnName="cl_lote" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_lote" Precision="6" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_lote" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param10" ColumnName="cl_caj" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_caj" Precision="6" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_caj" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param11" ColumnName="cl_ope" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_ope" Precision="6" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_ope" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param12" ColumnName="cl_maq" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_maq" Precision="6" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_maq" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param13" ColumnName="cl_corr" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_corr" Precision="6" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_corr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param14" ColumnName="cl_bols" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="cl_bols" Precision="3" ProviderType="Int" Scale="0" Size="0" SourceColumn="cl_bols" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param15" ColumnName="cl_obs" DataSourceName="`C:\Users\vgonzalez\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.envass" DataTypeServer="C" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="cl_obs" Precision="0" ProviderType="Char" Scale="0" Size="1024" SourceColumn="cl_obs" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery1" Modifier="Public" Name="InsertQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery1">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO ENVASS (cl_cta)
+VALUES (?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="cl_cta" DataSourceName="" DataTypeServer="unknown" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="cl_cta" Precision="0" ProviderType="Char" Scale="0" Size="1024" SourceColumn="cl_cta" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="movidiaTableAdapter" GeneratorDataComponentClassName="movidiaTableAdapter" Name="movidia" UserDataComponentName="movidiaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT `nroban`, `nroban1`, `chenro`, `import`, `observ`, `fecha`, `canche` FROM `movidia`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nroban" DataSetColumn="nroban" />
+              <Mapping SourceColumn="nroban1" DataSetColumn="nroban1" />
+              <Mapping SourceColumn="chenro" DataSetColumn="chenro" />
+              <Mapping SourceColumn="import" DataSetColumn="import" />
+              <Mapping SourceColumn="observ" DataSetColumn="observ" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="canche" DataSetColumn="canche" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE
+FROM MOVIDIA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBFConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO movidia
+                         (nroban, nroban1, chenro, import, observ, fecha, canche)
+VALUES        (?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="nroban" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="nroban" Precision="3" ProviderType="Int" Scale="0" Size="0" SourceColumn="nroban" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="nroban1" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="nroban1" Precision="3" ProviderType="Int" Scale="0" Size="0" SourceColumn="nroban1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="chenro" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="C" DbType="AnsiString" Direction="Input" ParameterName="chenro" Precision="0" Scale="0" Size="1024" SourceColumn="chenro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="import" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="import" Precision="17" ProviderType="Int" Scale="0" Size="0" SourceColumn="import" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param5" ColumnName="observ" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="C" DbType="AnsiString" Direction="Input" ParameterName="observ" Precision="0" Scale="0" Size="1024" SourceColumn="observ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param6" ColumnName="fecha" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="D" DbType="Date" Direction="Input" ParameterName="fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param7" ColumnName="canche" DataSourceName="`C:\Users\lmosqueira.Futura\Documents\Visual Studio 2008\Projects\Clearing\HostVB\data`.movidia" DataTypeServer="N" DbType="Int32" Direction="Input" ParameterName="canche" Precision="7" ProviderType="Int" Scale="0" Size="0" SourceColumn="canche" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsExport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsExport" msprop:Generator_DataSetName="dsExport" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ENVASS" msprop:Generator_UserTableName="ENVASS" msprop:Generator_RowDeletedName="ENVASSRowDeleted" msprop:Generator_RowChangedName="ENVASSRowChanged" msprop:Generator_RowClassName="ENVASSRow" msprop:Generator_RowChangingName="ENVASSRowChanging" msprop:Generator_RowEvArgName="ENVASSRowChangeEvent" msprop:Generator_RowEvHandlerName="ENVASSRowChangeEventHandler" msprop:Generator_TableClassName="ENVASSDataTable" msprop:Generator_TableVarName="tableENVASS" msprop:Generator_RowDeletingName="ENVASSRowDeleting" msprop:Generator_TablePropName="ENVASS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cl_banco" msprop:Generator_UserColumnName="cl_banco" msprop:Generator_ColumnPropNameInRow="cl_banco" msprop:Generator_ColumnVarNameInTable="columncl_banco" msprop:Generator_ColumnPropNameInTable="cl_bancoColumn" type="xs:decimal" />
+              <xs:element name="cl_doc" msprop:Generator_UserColumnName="cl_doc" msprop:Generator_ColumnPropNameInRow="cl_doc" msprop:Generator_ColumnVarNameInTable="columncl_doc" msprop:Generator_ColumnPropNameInTable="cl_docColumn" type="xs:decimal" />
+              <xs:element name="cl_cta" msprop:Generator_UserColumnName="cl_cta" msprop:Generator_ColumnPropNameInRow="cl_cta" msprop:Generator_ColumnVarNameInTable="columncl_cta" msprop:Generator_ColumnPropNameInTable="cl_ctaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cl_ser" msprop:Generator_UserColumnName="cl_ser" msprop:Generator_ColumnPropNameInRow="cl_ser" msprop:Generator_ColumnVarNameInTable="columncl_ser" msprop:Generator_ColumnPropNameInTable="cl_serColumn" type="xs:decimal" />
+              <xs:element name="cl_bcore" msprop:Generator_UserColumnName="cl_bcore" msprop:Generator_ColumnPropNameInRow="cl_bcore" msprop:Generator_ColumnVarNameInTable="columncl_bcore" msprop:Generator_ColumnPropNameInTable="cl_bcoreColumn" type="xs:decimal" />
+              <xs:element name="cl_cam" msprop:Generator_UserColumnName="cl_cam" msprop:Generator_ColumnPropNameInRow="cl_cam" msprop:Generator_ColumnVarNameInTable="columncl_cam" msprop:Generator_ColumnPropNameInTable="cl_camColumn" type="xs:decimal" />
+              <xs:element name="cl_monto" msprop:Generator_UserColumnName="cl_monto" msprop:Generator_ColumnPropNameInRow="cl_monto" msprop:Generator_ColumnVarNameInTable="columncl_monto" msprop:Generator_ColumnPropNameInTable="cl_montoColumn" type="xs:decimal" />
+              <xs:element name="cl_suc" msprop:Generator_UserColumnName="cl_suc" msprop:Generator_ColumnPropNameInRow="cl_suc" msprop:Generator_ColumnVarNameInTable="columncl_suc" msprop:Generator_ColumnPropNameInTable="cl_sucColumn" type="xs:decimal" />
+              <xs:element name="cl_lote" msprop:Generator_UserColumnName="cl_lote" msprop:Generator_ColumnPropNameInRow="cl_lote" msprop:Generator_ColumnVarNameInTable="columncl_lote" msprop:Generator_ColumnPropNameInTable="cl_loteColumn" type="xs:decimal" />
+              <xs:element name="cl_caj" msprop:Generator_UserColumnName="cl_caj" msprop:Generator_ColumnPropNameInRow="cl_caj" msprop:Generator_ColumnVarNameInTable="columncl_caj" msprop:Generator_ColumnPropNameInTable="cl_cajColumn" type="xs:decimal" />
+              <xs:element name="cl_ope" msprop:Generator_UserColumnName="cl_ope" msprop:Generator_ColumnPropNameInRow="cl_ope" msprop:Generator_ColumnVarNameInTable="columncl_ope" msprop:Generator_ColumnPropNameInTable="cl_opeColumn" type="xs:decimal" />
+              <xs:element name="cl_maq" msprop:Generator_UserColumnName="cl_maq" msprop:Generator_ColumnPropNameInRow="cl_maq" msprop:Generator_ColumnVarNameInTable="columncl_maq" msprop:Generator_ColumnPropNameInTable="cl_maqColumn" type="xs:decimal" />
+              <xs:element name="cl_corr" msprop:Generator_UserColumnName="cl_corr" msprop:Generator_ColumnPropNameInRow="cl_corr" msprop:Generator_ColumnVarNameInTable="columncl_corr" msprop:Generator_ColumnPropNameInTable="cl_corrColumn" type="xs:decimal" />
+              <xs:element name="cl_bols" msprop:Generator_UserColumnName="cl_bols" msprop:Generator_ColumnPropNameInRow="cl_bols" msprop:Generator_ColumnVarNameInTable="columncl_bols" msprop:Generator_ColumnPropNameInTable="cl_bolsColumn" type="xs:decimal" />
+              <xs:element name="cl_obs" msprop:Generator_UserColumnName="cl_obs" msprop:Generator_ColumnPropNameInRow="cl_obs" msprop:Generator_ColumnVarNameInTable="columncl_obs" msprop:Generator_ColumnPropNameInTable="cl_obsColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="movidia" msprop:Generator_UserTableName="movidia" msprop:Generator_RowDeletedName="movidiaRowDeleted" msprop:Generator_RowChangedName="movidiaRowChanged" msprop:Generator_RowClassName="movidiaRow" msprop:Generator_RowChangingName="movidiaRowChanging" msprop:Generator_RowEvArgName="movidiaRowChangeEvent" msprop:Generator_RowEvHandlerName="movidiaRowChangeEventHandler" msprop:Generator_TableClassName="movidiaDataTable" msprop:Generator_TableVarName="tablemovidia" msprop:Generator_RowDeletingName="movidiaRowDeleting" msprop:Generator_TablePropName="movidia">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nroban" msprop:Generator_UserColumnName="nroban" msprop:Generator_ColumnPropNameInRow="nroban" msprop:Generator_ColumnVarNameInTable="columnnroban" msprop:Generator_ColumnPropNameInTable="nrobanColumn" type="xs:decimal" />
+              <xs:element name="nroban1" msprop:Generator_UserColumnName="nroban1" msprop:Generator_ColumnPropNameInRow="nroban1" msprop:Generator_ColumnVarNameInTable="columnnroban1" msprop:Generator_ColumnPropNameInTable="nroban1Column" type="xs:decimal" />
+              <xs:element name="chenro" msprop:Generator_UserColumnName="chenro" msprop:Generator_ColumnPropNameInRow="chenro" msprop:Generator_ColumnVarNameInTable="columnchenro" msprop:Generator_ColumnPropNameInTable="chenroColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="import" msprop:Generator_UserColumnName="import" msprop:Generator_ColumnPropNameInRow="import" msprop:Generator_ColumnVarNameInTable="columnimport" msprop:Generator_ColumnPropNameInTable="importColumn" type="xs:decimal" />
+              <xs:element name="observ" msprop:Generator_UserColumnName="observ" msprop:Generator_ColumnPropNameInRow="observ" msprop:Generator_ColumnVarNameInTable="columnobserv" msprop:Generator_ColumnPropNameInTable="observColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_UserColumnName="fecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" type="xs:dateTime" />
+              <xs:element name="canche" msprop:Generator_UserColumnName="canche" msprop:Generator_ColumnPropNameInRow="canche" msprop:Generator_ColumnVarNameInTable="columncanche" msprop:Generator_ColumnPropNameInTable="cancheColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
